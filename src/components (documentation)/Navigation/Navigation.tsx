@@ -2,7 +2,9 @@ import styled, { keyframes, css } from "styled-components";
 
 import NavigationItems from "./NavigationItems";
 import { NavigationProps } from "./NavigationProps";
-import MobileNavigationHeader from "./MobileNavigationHeaderContainer";
+import MobileNavigationHeader from "./MobileNavigationHeader";
+import DesktopNavigationHeader from "./DesktopNavigationHeader";
+import { MAIN_DARK_FONT_COLOR } from "../../utils/commons";
 
 const Navigation = ({
   isMobileMenuOpen,
@@ -12,13 +14,12 @@ const Navigation = ({
     <>
       <MobileNavigationHeader onMobileMenuToggle={onMobileMenuToggle} />
 
-      {isMobileMenuOpen && (
-        <NavigationContainer style={{ left: isMobileMenuOpen ? "0" : "-75%" }}>
-          <nav>
-            <NavigationItems onMobileMenuToggle={onMobileMenuToggle} />
-          </nav>
-        </NavigationContainer>
-      )}
+      <NavigationContainer isMobileMenuOpen={isMobileMenuOpen}>
+        <DesktopNavigationHeader />
+        <nav>
+          <NavigationItems onMobileMenuToggle={onMobileMenuToggle} />
+        </nav>
+      </NavigationContainer>
 
       {/* {isMobileMenuOpen ? (
         <NavigationOverlay
@@ -41,7 +42,9 @@ const Navigation = ({
 
 export default Navigation;
 
-export const NavigationContainer = styled.div`
+export const NavigationContainer = styled.div<{
+  isMobileMenuOpen: boolean;
+}>`
   width: 250px;
   height: 100vh;
   padding: 25px 10px;
@@ -50,6 +53,21 @@ export const NavigationContainer = styled.div`
   z-index: 2;
   position: absolute;
   top: 0;
+  border-right: 1px solid ${MAIN_DARK_FONT_COLOR};
+  left: ${(props) => (props.isMobileMenuOpen ? "0" : "-75%")};
+  @media (min-width: 768px) {
+    left: 0;
+    position: unset;
+  }
+`;
+
+export const mobileNavigationFade = keyframes`
+from {
+  left: 0;
+}
+to {
+  left: -100%;
+}
 `;
 
 export const NavigationOverlay = styled.div<{
@@ -73,15 +91,9 @@ export const NavigationOverlay = styled.div<{
       animation-timing-function: linear;
       animation-fill-mode: forwards;
     `}
-`;
-
-export const mobileNavigationFade = keyframes`
-from {
-  left: 0;
-}
-to {
-  left: -100%;
-}
+  @media (min-width: 768px) {
+    display: none;
+  }
 `;
 
 // export const NavigationOverlayClosed = styled.div`

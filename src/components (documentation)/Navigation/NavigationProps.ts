@@ -7,6 +7,6 @@ export type NavigationItemsProps = {
   onMobileMenuToggle: () => void;
 };
 
-export type MobileNavigationHeaderContainerProps = {
+export type MobileNavigationHeaderProps = {
   onMobileMenuToggle: () => void;
 };

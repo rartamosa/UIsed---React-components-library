@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { useState } from "react";
 
 import Navigation from "../components (documentation)/Navigation/Navigation";
+import Overview from "../components (documentation)/Overview/Overview";
 import Select from "../components (documentation)/Select";
 import TagsInput from "../components (documentation)/TagsInput";
 import Table from "../components (documentation)/Table";
@@ -23,6 +24,8 @@ const UIsed = () => {
         onMobileMenuToggle={handleMobileMenuToggle}
       />
       <Routes>
+        {/* TODO background image */}
+        <Route index element={<Overview />} />
         <Route path="select/*" element={<Select />} />
         <Route path="tags-input" element={<TagsInput />} />
         <Route path="table" element={<Table />} />
