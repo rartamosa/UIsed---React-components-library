@@ -17,7 +17,10 @@ const Navigation = ({
       <NavigationContainer isMobileMenuOpen={isMobileMenuOpen}>
         <DesktopNavigationHeader />
         <nav>
-          <NavigationItems onMobileMenuToggle={onMobileMenuToggle} />
+          <NavigationItems
+            onMobileMenuToggle={onMobileMenuToggle}
+            isMobileMenuOpen={isMobileMenuOpen}
+          />
         </nav>
       </NavigationContainer>
 

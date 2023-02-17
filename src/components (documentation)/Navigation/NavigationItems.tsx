@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
@@ -38,8 +38,19 @@ library.add(
   far
 );
 
-const NavigationItems = ({ onMobileMenuToggle }: NavigationItemsProps) => {
+const NavigationItems = ({
+  onMobileMenuToggle,
+  isMobileMenuOpen,
+}: NavigationItemsProps) => {
   const [isComponentsSectionOpen, setIsComponentsSectionOpen] = useState(true);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isMobileMenuOpen]);
 
   const handleComponentsSectionOpen = () => {
     setIsComponentsSectionOpen((prevState) => !prevState);
@@ -130,6 +141,7 @@ export const ComponentsOptions = styled.div`
   flex-direction: column;
   gap: 11px;
   padding-left: 41px;
+  margin-top: 10px;
 `;
 
 export const NavigationOption = styled(NavLink)<{

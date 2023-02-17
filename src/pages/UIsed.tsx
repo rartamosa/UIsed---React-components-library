@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import Navigation from "../components (documentation)/Navigation/Navigation";
 import Overview from "../components (documentation)/Overview/Overview";
-import Select from "../components (documentation)/Select";
+import Select from "../components (documentation)/Select/Select";
 import TagsInput from "../components (documentation)/TagsInput";
 import Table from "../components (documentation)/Table";
 import Dialog from "../components (documentation)/Dialog";
