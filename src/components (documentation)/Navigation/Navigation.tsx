@@ -1,4 +1,4 @@
-import styled, { keyframes, css } from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 import NavigationItems from "./NavigationItems";
 import { NavigationProps } from "./NavigationProps";
@@ -21,21 +21,10 @@ const Navigation = ({
         </nav>
       </NavigationContainer>
 
-      {/* {isMobileMenuOpen ? (
-        <NavigationOverlay
-          isMobileMenuOpen={isMobileMenuOpen}
-          onClick={onMobileMenuToggle}
-        ></NavigationOverlay>
-      ) : (
-        <NavigationOverlayClosed></NavigationOverlayClosed>
-      )} */}
-
-      {isMobileMenuOpen && (
-        <NavigationOverlay
-          isMobileMenuOpen={isMobileMenuOpen}
-          onClick={onMobileMenuToggle}
-        ></NavigationOverlay>
-      )}
+      <NavigationOverlay
+        isMobileMenuOpen={isMobileMenuOpen}
+        onClick={onMobileMenuToggle}
+      ></NavigationOverlay>
     </>
   );
 };
@@ -56,17 +45,26 @@ export const NavigationContainer = styled.div<{
   border-right: 1px solid ${MAIN_DARK_FONT_COLOR};
   left: ${(props) => (props.isMobileMenuOpen ? "0" : "-75%")};
   @media (min-width: 768px) {
-    left: 0;
     position: unset;
+    height: unset;
   }
 `;
 
-export const mobileNavigationFade = keyframes`
+export const mobileNavigationFadeOut = keyframes`
 from {
   left: 0;
 }
 to {
   left: -100%;
+}
+`;
+
+export const mobileNavigationFadeIn = keyframes`
+from {
+  left: -100%;
+}
+to {
+  left: 0;
 }
 `;
 
@@ -78,19 +76,18 @@ export const NavigationOverlay = styled.div<{
   bottom: 0;
   width: 100%;
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.35);
+  background-color: ${(props) =>
+    props.isMobileMenuOpen ? "rgba(0, 0, 0, 0.35)" : "#fff"};
   z-index: 1;
-  transition: background-color 0.3s ease;
-  ${(props) =>
-    !props.isMobileMenuOpen &&
-    css`
-      background-color: #fff;
-      transition: background-color 0.3s ease;
-      animation-name: ${mobileNavigationFade};
-      animation-duration: 0.3s;
-      animation-timing-function: linear;
-      animation-fill-mode: forwards;
-    `}
+  transition: all 0.3s ease;
+
+  animation-name: ${(props) =>
+    props.isMobileMenuOpen ? mobileNavigationFadeIn : mobileNavigationFadeOut};
+  animation-duration: 0.3s;
+  animation-delay: ${(props) => (props.isMobileMenuOpen ? "0" : "0.3s")};
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+
   @media (min-width: 768px) {
     display: none;
   }

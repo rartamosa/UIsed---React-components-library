@@ -24,7 +24,6 @@ const UIsed = () => {
         onMobileMenuToggle={handleMobileMenuToggle}
       />
       <Routes>
-        {/* TODO background image */}
         <Route index element={<Overview />} />
         <Route path="select/*" element={<Select />} />
         <Route path="tags-input" element={<TagsInput />} />

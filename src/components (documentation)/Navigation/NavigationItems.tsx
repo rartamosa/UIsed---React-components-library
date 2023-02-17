@@ -47,7 +47,7 @@ const NavigationItems = ({ onMobileMenuToggle }: NavigationItemsProps) => {
 
   return (
     <NavigationContainer>
-      <NavigationOption to="/uised" onClick={onMobileMenuToggle}>
+      <NavigationOption to="/uised" onClick={onMobileMenuToggle} end>
         <MenuPrimaryIcon icon={["fas", "circle-play"]} size="lg" />
         <span>Getting started</span>
       </NavigationOption>
@@ -132,7 +132,9 @@ export const ComponentsOptions = styled.div`
   padding-left: 41px;
 `;
 
-export const NavigationOption = styled(NavLink)`
+export const NavigationOption = styled(NavLink)<{
+  end?: boolean;
+}>`
   display: flex;
   gap: 9px;
   color: ${MAIN_DARK_FONT_COLOR};

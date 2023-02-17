@@ -84,8 +84,8 @@ const Overview = () => {
           <BackToTop> back to top</BackToTop>
           <FontAwesomeIcon icon={["fas", "angles-up"]} />
         </BackToTopContainer>
+        <Background />
       </MainContainer>
-      {/* <Background /> */}
     </>
   );
 };
@@ -97,8 +97,12 @@ export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 50px;
+  position: relative;
   @media (min-width: 768px) {
-    margin: 50px 80px;
+    width: calc(100% - 250px);
+    margin: 50px 0;
+    padding: 0 80px;
+    box-sizing: border-box;
   }
 `;
 

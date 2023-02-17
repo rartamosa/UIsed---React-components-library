@@ -11,11 +11,18 @@ export const BackgroundImage = styled.div`
   "assets/component_page_background.png"});
   position: absolute;
   z-index: -1;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
+  width: calc(100% + 30px);
+  height: calc(100% + 80px);
+  left: -15px;
+  bottom: -30px;
+
+  @media (min-width: 768px) {
+    left: 0;
+    width: 100%;
+    height: calc(100% + 100px);
+    bottom: -50px;
+  }
 `;
