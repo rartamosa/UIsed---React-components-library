@@ -6,6 +6,7 @@ import { MAIN_DARK_FONT_COLOR, ORANGE_COLOR } from "../../utils/commons";
 import ComponentPage from "../Reusable components/ComponentPage";
 import SelectUsage from "./SelectUsage";
 import SelectProps from "./SelectProps";
+import Background from "../Background/Background";
 
 const Select = () => {
   return (
@@ -28,6 +29,7 @@ const Select = () => {
         <Route path="usage" element={<SelectUsage />} />
         <Route path="props" element={<SelectProps />} />
       </Routes>
+      <Background />
     </MainContainer>
   );
 };

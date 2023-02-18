@@ -8,7 +8,7 @@ import {
   TextSpan,
 } from "../Overview/overviewStyles";
 import { GithubButtonContainer, Button } from "../../pages/pagesStyles";
-import { ComponentPageProps } from "./ComponentPageProps";
+import { ComponentPageProps } from "./reusableComponentsTypes";
 
 library.add(fab, faGithub);
 

@@ -1,5 +1,3 @@
-import styled from "styled-components";
-
 import {
   SingleSection,
   SectionSubheader,
@@ -22,12 +20,12 @@ const SelectUsage = () => {
           Here's a basic usage example of the <Code>select</Code> component:
         </TextSpan>
         <div style={{ alignSelf: "center" }}>
-          <Select selectOptions={selectDummyData} shouldCloseOnClear={false} />
+          <Select selectOptions={selectDummyData} />
         </div>
 
         <CodeSnippet
           language="html"
-          code="&lt;Select selectOptions=&#123;selectDummyData&#125; shouldCloseOnClear=&#123;false&#125; /&gt;"
+          code="&lt;Select selectOptions=&#123;selectDummyData&#125; /&gt;"
         />
       </SingleSection>
 
@@ -40,16 +38,11 @@ const SelectUsage = () => {
           provide clear and concise guidance on what input is expected.
         </TextSpan>
         <div style={{ alignSelf: "center" }}>
-          <Select
-            selectOptions={selectDummyData}
-            shouldCloseOnClear={false}
-            placeholder="Hello!"
-          />
+          <Select selectOptions={selectDummyData} placeholder="Hello!" />
         </div>
         <CodeSnippet
           code="&#x3C;Select
         selectOptions=&#123;selectDummyData&#125;
-        shouldCloseOnClear=&#123;false&#125;
         placeholder=&#x22;Hello!&#x22;
       /&#x3E;"
         />
@@ -67,12 +60,11 @@ const SelectUsage = () => {
         <div style={{ alignSelf: "center" }}>
           <Select
             selectOptions={selectDummyData}
-            shouldCloseOnClear={false}
             containerBorderColor="#FB8500"
             containerBorderWidth="3px"
           />
         </div>
-        <CodeSnippet code="&#x3C;Select selectOptions=&#123;selectDummyData&#125; shouldCloseOnClear=&#123;false&#125; containerBorderColor=&#x22;#FB8500&#x22; containerBorderWidth=&#x22;3px&#x22; /&#x3E;" />
+        <CodeSnippet code="&#x3C;Select selectOptions=&#123;selectDummyData&#125; containerBorderColor=&#x22;#FB8500&#x22; containerBorderWidth=&#x22;3px&#x22; /&#x3E;" />
       </SingleSection>
 
       {/* SIZE */}
@@ -86,33 +78,28 @@ const SelectUsage = () => {
         <div style={{ alignSelf: "center" }}>
           <Select
             selectOptions={selectDummyData}
-            shouldCloseOnClear={false}
             componentSize="small"
             placeholder="small"
           />
         </div>
-        {/* <CodeSnippet code="&#x3C;Select selectOptions=&#123;selectDummyData&#125; shouldCloseOnClear=&#123;false&#125; componentSize=&#x22;small&#x22; /&#x3E;" /> */}
         <div style={{ alignSelf: "center" }}>
           <Select
             selectOptions={selectDummyData}
-            shouldCloseOnClear={false}
             componentSize="medium"
             placeholder="medium (default)"
           />
         </div>
-        {/* <CodeSnippet code="&#x3C;Select selectOptions=&#123;selectDummyData&#125; shouldCloseOnClear=&#123;false&#125; componentSize=&#x22;medium&#x22; /&#x3E;" /> */}
         <div style={{ alignSelf: "center" }}>
           <Select
             selectOptions={selectDummyData}
-            shouldCloseOnClear={false}
             componentSize="large"
             placeholder="large"
           />
         </div>
         <CodeSnippet
-          code="&#x3C;Select selectOptions=&#123;selectDummyData&#125; shouldCloseOnClear=&#123;false&#125; componentSize=&#x22;small&#x22; /&#x3E;
-&#x3C;Select selectOptions=&#123;selectDummyData&#125; shouldCloseOnClear=&#123;false&#125; componentSize=&#x22;medium&#x22; /&#x3E;
-&#x3C;Select selectOptions=&#123;selectDummyData&#125; shouldCloseOnClear=&#123;false&#125; componentSize=&#x22;large&#x22; /&#x3E;"
+          code="&#x3C;Select selectOptions=&#123;selectDummyData&#125; componentSize=&#x22;small&#x22; /&#x3E;
+&#x3C;Select selectOptions=&#123;selectDummyData&#125; componentSize=&#x22;medium&#x22; /&#x3E;
+&#x3C;Select selectOptions=&#123;selectDummyData&#125; componentSize=&#x22;large&#x22; /&#x3E;"
         />
       </SingleSection>
 
@@ -125,13 +112,24 @@ const SelectUsage = () => {
           scheme, ensuring a consistent and visually pleasing user experience.
         </TextSpan>
         <div style={{ alignSelf: "center" }}>
-          <Select
-            selectOptions={selectDummyData}
-            shouldCloseOnClear={false}
-            backgroundColor="#FCC0CB"
-          />
+          <Select selectOptions={selectDummyData} backgroundColor="#FCC0CB" />
         </div>
-        <CodeSnippet code="&#x3C;Select selectOptions=&#123;selectDummyData&#125; shouldCloseOnClear=&#123;false&#125; backgroundColor=&#x22;#FCC0CB&#x22; /&#x3E;" />
+        <CodeSnippet code="&#x3C;Select selectOptions=&#123;selectDummyData&#125; backgroundColor=&#x22;#FCC0CB&#x22; /&#x3E;" />
+      </SingleSection>
+
+      {/* SHOULD CLOSE ON CLEAR */}
+      <SingleSection>
+        <SectionSubheader>should close on clear</SectionSubheader>
+        <TextSpan>
+          The shouldCloseOnClear prop of the <Code>Select</Code> component
+          determines whether the dropdown should be closed when the user clears
+          the selected option or not. If it's set to true, the dropdown will be
+          closed, and if it's set to false, it will remain open.
+        </TextSpan>
+        <div style={{ alignSelf: "center" }}>
+          <Select selectOptions={selectDummyData} shouldCloseOnClear={true} />
+        </div>
+        <CodeSnippet code="&#x3C;Select selectOptions=&#123;selectDummyData&#125; shouldCloseOnClear=&#123;true&#125; /&#x3E;" />
       </SingleSection>
 
       {/* IS DISABLED */}
@@ -145,13 +143,9 @@ const SelectUsage = () => {
           being loaded.
         </TextSpan>
         <div style={{ alignSelf: "center" }}>
-          <Select
-            selectOptions={selectDummyData}
-            shouldCloseOnClear={false}
-            isDisabled={true}
-          />
+          <Select selectOptions={selectDummyData} isDisabled={true} />
         </div>
-        <CodeSnippet code="&#x3C;Select selectOptions=&#123;selectDummyData&#125; shouldCloseOnClear=&#123;false&#125; isDisabled=&#123;true&#125; /&#x3E;" />
+        <CodeSnippet code="&#x3C;Select selectOptions=&#123;selectDummyData&#125; isDisabled=&#123;true&#125; /&#x3E;" />
       </SingleSection>
 
       {/* ERROR BORDER COLOR */}
@@ -164,13 +158,9 @@ const SelectUsage = () => {
           selection.
         </TextSpan>
         <div style={{ alignSelf: "center" }}>
-          <Select
-            selectOptions={selectDummyData}
-            shouldCloseOnClear={false}
-            errorBorderColor="violet"
-          />
+          <Select selectOptions={selectDummyData} errorBorderColor="violet" />
         </div>
-        <CodeSnippet code="&#x3C;Select selectOptions=&#123;selectDummyData&#125; shouldCloseOnClear=&#123;false&#125; errorBorderColor=&#x22;violet&#x22; /&#x3E;" />
+        <CodeSnippet code="&#x3C;Select selectOptions=&#123;selectDummyData&#125; errorBorderColor=&#x22;violet&#x22; /&#x3E;" />
       </SingleSection>
 
       {/* ICON COLOR */}
@@ -181,13 +171,9 @@ const SelectUsage = () => {
           to match the overall style of the user interface.
         </TextSpan>
         <div style={{ alignSelf: "center" }}>
-          <Select
-            selectOptions={selectDummyData}
-            shouldCloseOnClear={false}
-            iconColor="#2338E9"
-          />
+          <Select selectOptions={selectDummyData} iconColor="#2338E9" />
         </div>
-        <CodeSnippet code="&#x3C;Select selectOptions=&#123;selectDummyData&#125; shouldCloseOnClear=&#123;false&#125; iconColor=&#x22;#2338E9&#x22; /&#x3E;" />
+        <CodeSnippet code="&#x3C;Select selectOptions=&#123;selectDummyData&#125; iconColor=&#x22;#2338E9&#x22; /&#x3E;" />
       </SingleSection>
 
       {/* CUSTOM ICON */}
@@ -198,13 +184,9 @@ const SelectUsage = () => {
           by specifying a custom icon name from the FontAwesome icon library.
         </TextSpan>
         <div style={{ alignSelf: "center" }}>
-          <Select
-            selectOptions={selectDummyData}
-            shouldCloseOnClear={false}
-            customIcon="sun"
-          />
+          <Select selectOptions={selectDummyData} customIcon="sun" />
         </div>
-        <CodeSnippet code="&#x3C;Select selectOptions=&#123;selectDummyData&#125; shouldCloseOnClear=&#123;false&#125; customIcon=&#x22;sun&#x22; /&#x3E;" />
+        <CodeSnippet code="&#x3C;Select selectOptions=&#123;selectDummyData&#125; customIcon=&#x22;sun&#x22; /&#x3E;" />
       </SingleSection>
 
       <BackToTopComponent />

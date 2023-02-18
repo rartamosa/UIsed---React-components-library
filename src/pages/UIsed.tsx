@@ -26,6 +26,8 @@ const UIsed = () => {
       <Routes>
         {/* TODO active na właściwą "kartę"; Usage na start */}
         <Route index element={<Overview />} />
+
+        {/* TODO background */}
         <Route path="select/*" element={<Select />} />
         <Route path="tags-input" element={<TagsInput />} />
         <Route path="table" element={<Table />} />
