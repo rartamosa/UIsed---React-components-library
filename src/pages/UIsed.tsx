@@ -20,6 +20,7 @@ const UIsed = () => {
   return (
     <>
       <Navigation //TODO animacja na otwarcie i zamknięcie mobilnego menu
+        // TODO position sticky przy scrollu na desktopie
         isMobileMenuOpen={isMobileMenuOpen}
         onMobileMenuToggle={handleMobileMenuToggle}
       />
