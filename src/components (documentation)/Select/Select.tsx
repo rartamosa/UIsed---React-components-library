@@ -1,12 +1,14 @@
-import { Route, Routes, Link } from "react-router-dom";
-import styled from "styled-components";
+import { Route, Routes } from "react-router-dom";
 
 import { MainContainer } from "../Overview/overviewStyles";
-import { MAIN_DARK_FONT_COLOR, ORANGE_COLOR } from "../../utils/commons";
 import ComponentPage from "../Reusable components/ComponentPage";
 import SelectUsage from "./SelectUsage";
 import SelectProps from "./SelectProps";
 import Background from "../Background/Background";
+import {
+  InnerNavigationContainer,
+  InnerNavigationOption,
+} from "../Reusable components/reusableComponentsStyles";
 
 const Select = () => {
   return (
@@ -35,25 +37,3 @@ const Select = () => {
 };
 
 export default Select;
-
-export const InnerNavigationContainer = styled.div`
-  height: 47px;
-  display: flex;
-  gap: 8px;
-  border-bottom: 2px solid ${MAIN_DARK_FONT_COLOR};
-  align-items: center;
-`;
-
-export const InnerNavigationOption = styled(Link)`
-  text-transform: capitalize;
-  text-decoration: none;
-  padding: 14px 20px 16px 20px;
-  color: inherit;
-  box-sizing: content-box;
-  &:hover,
-  &:focus,
-  &:active {
-    background-color: rgba(251, 133, 0, 0.3);
-    color: ${ORANGE_COLOR};
-  }
-`;

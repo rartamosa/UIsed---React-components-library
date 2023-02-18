@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { MAIN_DARK_FONT_COLOR } from "../../utils/commons";
+import { Link } from "react-router-dom";
+import { MAIN_DARK_FONT_COLOR, ORANGE_COLOR } from "../../utils/commons";
 
 export const CodeExampleHeader = styled.span`
   font-weight: 800;
@@ -18,4 +19,26 @@ export const CodeSnippetContainer = styled.div`
   font-size: 13px;
   display: flex;
   flex-direction: column;
+`;
+
+export const InnerNavigationContainer = styled.div`
+  height: 47px;
+  display: flex;
+  gap: 8px;
+  border-bottom: 2px solid ${MAIN_DARK_FONT_COLOR};
+  align-items: center;
+`;
+
+export const InnerNavigationOption = styled(Link)`
+  text-transform: capitalize;
+  text-decoration: none;
+  padding: 14px 20px 16px 20px;
+  color: inherit;
+  box-sizing: content-box;
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: rgba(251, 133, 0, 0.3);
+    color: ${ORANGE_COLOR};
+  }
 `;
