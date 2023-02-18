@@ -24,6 +24,7 @@ const UIsed = () => {
         onMobileMenuToggle={handleMobileMenuToggle}
       />
       <Routes>
+        {/* TODO active na właściwą "kartę"; Usage na start */}
         <Route index element={<Overview />} />
         <Route path="select/*" element={<Select />} />
         <Route path="tags-input" element={<TagsInput />} />

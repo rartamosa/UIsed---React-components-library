@@ -1,7 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { fas, faAnglesUp } from "@fortawesome/free-solid-svg-icons";
-import { library } from "@fortawesome/fontawesome-svg-core";
-
 import Background from "../Background/Background";
 import {
   MainContainer,
@@ -13,17 +9,10 @@ import {
   Image,
   SingleAdvantage,
   AdvantageBold,
-  BackToTopContainer,
-  BackToTop,
 } from "./overviewStyles";
-
-library.add(fas, faAnglesUp);
+import BackToTopComponent from "../Reusable components/BackToTopComponent";
 
 const Overview = () => {
-  const handleScroll = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   return (
     <>
       <MainContainer>
@@ -91,10 +80,7 @@ const Overview = () => {
             alt="illustration"
           />
         </SingleSection>
-        <BackToTopContainer onClick={handleScroll}>
-          <BackToTop> back to top</BackToTop>
-          <FontAwesomeIcon icon={["fas", "angles-up"]} />
-        </BackToTopContainer>
+        <BackToTopComponent />
         <Background />
       </MainContainer>
     </>

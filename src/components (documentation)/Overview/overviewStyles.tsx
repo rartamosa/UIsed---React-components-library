@@ -46,6 +46,9 @@ export const SectionSubheader = styled.h4`
   line-height: 28px;
   letter-spacing: 0.1px;
   margin: 0;
+  &:first-letter {
+    text-transform: uppercase;
+  }
 `;
 
 export const Introduction = styled.div`
@@ -78,21 +81,4 @@ export const SingleAdvantage = styled.span`
 
 export const AdvantageBold = styled.span`
   font-weight: 700;
-`;
-
-export const BackToTopContainer = styled.div<{
-  onClick: () => void;
-}>`
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  align-self: center;
-  cursor: pointer;
-`;
-
-export const BackToTop = styled.span`
-  text-transform: uppercase;
-  font-weight: 800;
-  font-size: 12px;
-  line-height: 16px;
 `;

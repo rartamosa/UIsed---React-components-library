@@ -1,7 +1,7 @@
 /* PrismJS 1.29.0
-https://prismjs.com/download.html#themes=prism-funky&languages=markup+css+clike+javascript+typescript&plugins=unescaped-markup */
-// @ts-nocheck
+https://prismjs.com/download.html#themes=prism-funky&languages=markup+css+clike+javascript+typescript&plugins=toolbar+copy-to-clipboard */
 /* eslint-disable */
+// @ts-nocheck
 var _self =
     "undefined" != typeof window
       ? window
@@ -798,39 +798,192 @@ Prism.languages.clike = {
     }),
     (e.languages.ts = e.languages.typescript);
 })(Prism);
-"undefined" != typeof Prism &&
-  "undefined" != typeof document &&
-  (Element.prototype.matches ||
-    (Element.prototype.matches =
-      Element.prototype.msMatchesSelector ||
-      Element.prototype.webkitMatchesSelector),
-  (Prism.plugins.UnescapedMarkup = !0),
-  Prism.hooks.add("before-highlightall", function (e) {
-    e.selector +=
-      ', [class*="lang-"] script[type="text/plain"], [class*="language-"] script[type="text/plain"], script[type="text/plain"][class*="lang-"], script[type="text/plain"][class*="language-"]';
-  }),
-  Prism.hooks.add("before-sanity-check", function (e) {
-    var t = e.element;
-    if (t.matches('script[type="text/plain"]')) {
-      var a = document.createElement("code"),
-        c = document.createElement("pre");
-      c.className = a.className = t.className;
-      var n = t.dataset;
-      return (
-        Object.keys(n || {}).forEach(function (e) {
-          Object.prototype.hasOwnProperty.call(n, e) && (c.dataset[e] = n[e]);
-        }),
-        (a.textContent = e.code =
-          e.code.replace(/&lt;\/script(?:>|&gt;)/gi, "</script>")),
-        c.appendChild(a),
-        t.parentNode.replaceChild(c, t),
-        void (e.element = a)
-      );
+!(function () {
+  if ("undefined" != typeof Prism && "undefined" != typeof document) {
+    var e = [],
+      t = {},
+      n = function () {};
+    Prism.plugins.toolbar = {};
+    var a = (Prism.plugins.toolbar.registerButton = function (n, a) {
+        var r;
+        (r =
+          "function" == typeof a
+            ? a
+            : function (e) {
+                var t;
+                return (
+                  "function" == typeof a.onClick
+                    ? (((t = document.createElement("button")).type = "button"),
+                      t.addEventListener("click", function () {
+                        a.onClick.call(this, e);
+                      }))
+                    : "string" == typeof a.url
+                    ? ((t = document.createElement("a")).href = a.url)
+                    : (t = document.createElement("span")),
+                  a.className && t.classList.add(a.className),
+                  (t.textContent = a.text),
+                  t
+                );
+              }),
+          n in t
+            ? console.warn(
+                'There is a button with the key "' + n + '" registered already.'
+              )
+            : e.push((t[n] = r));
+      }),
+      r = (Prism.plugins.toolbar.hook = function (a) {
+        var r = a.element.parentNode;
+        if (
+          r &&
+          /pre/i.test(r.nodeName) &&
+          !r.parentNode.classList.contains("code-toolbar")
+        ) {
+          var o = document.createElement("div");
+          o.classList.add("code-toolbar"),
+            r.parentNode.insertBefore(o, r),
+            o.appendChild(r);
+          var i = document.createElement("div");
+          i.classList.add("toolbar");
+          var l = e,
+            d = (function (e) {
+              for (; e; ) {
+                var t = e.getAttribute("data-toolbar-order");
+                if (null != t)
+                  return (t = t.trim()).length ? t.split(/\s*,\s*/g) : [];
+                e = e.parentElement;
+              }
+            })(a.element);
+          d &&
+            (l = d.map(function (e) {
+              return t[e] || n;
+            })),
+            l.forEach(function (e) {
+              var t = e(a);
+              if (t) {
+                var n = document.createElement("div");
+                n.classList.add("toolbar-item"),
+                  n.appendChild(t),
+                  i.appendChild(n);
+              }
+            }),
+            o.appendChild(i);
+        }
+      });
+    a("label", function (e) {
+      var t = e.element.parentNode;
+      if (t && /pre/i.test(t.nodeName) && t.hasAttribute("data-label")) {
+        var n,
+          a,
+          r = t.getAttribute("data-label");
+        try {
+          a = document.querySelector("template#" + r);
+        } catch (e) {}
+        return (
+          a
+            ? (n = a.content)
+            : (t.hasAttribute("data-url")
+                ? ((n = document.createElement("a")).href =
+                    t.getAttribute("data-url"))
+                : (n = document.createElement("span")),
+              (n.textContent = r)),
+          n
+        );
+      }
+    }),
+      Prism.hooks.add("complete", r);
+  }
+})();
+!(function () {
+  function t(t) {
+    var e = document.createElement("textarea");
+    (e.value = t.getText()),
+      (e.style.top = "0"),
+      (e.style.left = "0"),
+      (e.style.position = "fixed"),
+      document.body.appendChild(e),
+      e.focus(),
+      e.select();
+    try {
+      var o = document.execCommand("copy");
+      setTimeout(function () {
+        o ? t.success() : t.error();
+      }, 1);
+    } catch (e) {
+      setTimeout(function () {
+        t.error(e);
+      }, 1);
     }
-    if (!e.code) {
-      var o = t.childNodes;
-      1 === o.length &&
-        "#comment" == o[0].nodeName &&
-        (t.textContent = e.code = o[0].textContent);
-    }
-  }));
+    document.body.removeChild(e);
+  }
+  "undefined" != typeof Prism &&
+    "undefined" != typeof document &&
+    (Prism.plugins.toolbar
+      ? Prism.plugins.toolbar.registerButton("copy-to-clipboard", function (e) {
+          var o = e.element,
+            n = (function (t) {
+              var e = {
+                copy: "Copy",
+                "copy-error": "Press Ctrl+C to copy",
+                "copy-success": "Copied!",
+                "copy-timeout": 5e3,
+              };
+              for (var o in e) {
+                for (
+                  var n = "data-prismjs-" + o, c = t;
+                  c && !c.hasAttribute(n);
+
+                )
+                  c = c.parentElement;
+                c && (e[o] = c.getAttribute(n));
+              }
+              return e;
+            })(o),
+            c = document.createElement("button");
+          (c.className = "copy-to-clipboard-button"),
+            c.setAttribute("type", "button");
+          var r = document.createElement("span");
+          return (
+            c.appendChild(r),
+            u("copy"),
+            (function (e, o) {
+              e.addEventListener("click", function () {
+                !(function (e) {
+                  navigator.clipboard
+                    ? navigator.clipboard
+                        .writeText(e.getText())
+                        .then(e.success, function () {
+                          t(e);
+                        })
+                    : t(e);
+                })(o);
+              });
+            })(c, {
+              getText: function () {
+                return o.textContent;
+              },
+              success: function () {
+                u("copy-success"), i();
+              },
+              error: function () {
+                u("copy-error"),
+                  setTimeout(function () {
+                    !(function (t) {
+                      window.getSelection().selectAllChildren(t);
+                    })(o);
+                  }, 1),
+                  i();
+              },
+            }),
+            c
+          );
+          function i() {
+            setTimeout(function () {
+              u("copy");
+            }, n["copy-timeout"]);
+          }
+          function u(t) {
+            (r.textContent = n[t]), c.setAttribute("data-copy-state", t);
+          }
+        })
+      : console.warn("Copy to Clipboard plugin loaded before Toolbar plugin."));
+})();
