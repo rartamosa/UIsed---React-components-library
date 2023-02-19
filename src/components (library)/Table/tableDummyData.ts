@@ -10,7 +10,7 @@ export const dummyTableRows = [
   {
     rowName: "Frozen yoghurt",
     calories: 159,
-    fat: "6.0",
+    fat: 6.0,
     carbs: 24,
     protein: 4.0,
   },
@@ -49,13 +49,7 @@ export const dummyTableRows = [
     carbs: 87,
     protein: 6.5,
   },
-  {
-    rowName: "Ice cream sandwich",
-    calories: 237,
-    fat: 9,
-    carbs: 37,
-    protein: 4.3,
-  },
+
   {
     rowName: "Jelly Bean",
     calories: 375,
