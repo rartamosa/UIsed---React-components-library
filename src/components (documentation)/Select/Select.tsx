@@ -1,4 +1,5 @@
-import { Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
 
 import { MainContainer } from "../Overview/overviewStyles";
 import ComponentPage from "../Reusable components/ComponentPage";
@@ -11,6 +12,12 @@ import {
 } from "../Reusable components/reusableComponentsStyles";
 
 const Select = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate("/uised/select/usage");
+  }, []);
+
   return (
     <MainContainer style={{ gap: "30px" }}>
       <ComponentPage

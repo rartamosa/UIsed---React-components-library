@@ -181,6 +181,28 @@ const TableUsage = () => {
         </div>
         <CodeSnippet code="&#x3C;Table allowSorting={false} /&#x3E;" />
       </SingleSection>
+
+      {/* columnWidth */}
+      <SingleSection>
+        <SectionSubheader>sorting</SectionSubheader>
+        <TextSpan>
+          The sorting prop is used to enable or disable column sorting in the
+          <Code>table</Code>. When it's set to true, the <Code>table</Code>{" "}
+          headers will have sorting icons that allow the user to sort the{" "}
+          <Code>table</Code> by that column. When it's set to false, the sorting
+          icons will not be displayed and the <Code>table</Code> will not be
+          sortable.
+        </TextSpan>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <Table
+            columnNames={dummyColumnNames}
+            tableRows={dummyTableRows}
+            columnWidth="200px"
+          />
+        </div>
+        <CodeSnippet code="&#x3C;Table allowSorting={false} /&#x3E;" />
+      </SingleSection>
+
       <BackToTopComponent />
     </>
   );

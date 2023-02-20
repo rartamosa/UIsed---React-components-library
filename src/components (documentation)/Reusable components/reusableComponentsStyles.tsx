@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { MAIN_DARK_FONT_COLOR, ORANGE_COLOR } from "../../utils/commons";
 
 export const CodeExampleHeader = styled.span`
@@ -29,7 +29,7 @@ export const InnerNavigationContainer = styled.div`
   align-items: center;
 `;
 
-export const InnerNavigationOption = styled(Link)`
+export const InnerNavigationOption = styled(NavLink)`
   text-transform: capitalize;
   text-decoration: none;
   padding: 14px 20px 16px 20px;
@@ -37,7 +37,8 @@ export const InnerNavigationOption = styled(Link)`
   box-sizing: content-box;
   &:hover,
   &:focus,
-  &:active {
+  &:active,
+  &.active {
     background-color: rgba(251, 133, 0, 0.3);
     color: ${ORANGE_COLOR};
   }

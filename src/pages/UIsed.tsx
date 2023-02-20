@@ -24,16 +24,14 @@ const UIsed = () => {
         onMobileMenuToggle={handleMobileMenuToggle}
       />
       <Routes>
-        {/* TODO active na właściwą "kartę"; Usage na start */}
         <Route index element={<Overview />} />
 
         {/* TODO background */}
         <Route path="select/*" element={<Select />} />
 
-        {/* TODO background */}
         <Route path="tags-input/*" element={<TagsInput />} />
 
-        {/* TODO szerokość kolumn w gridzie - nazwy kolumn nie spinają się szerokością z zawartością komórek */}
+        {/* TODO dodać opis nowego propsa columnWidth */}
         <Route path="table/*" element={<Table />} />
 
         {/* TODO stylowanie nakłada się na wszystkie dialogi, a nie tylko na pojedyncze przykłady */}

@@ -7,7 +7,7 @@ const Background = () => {
 export default Background;
 
 export const BackgroundImage = styled.div`
-  background-image: URL(${process.env.PUBLIC_URL +
+  background-image: url(${process.env.PUBLIC_URL +
   "assets/component_page_background.png"});
   position: absolute;
   z-index: -1;
