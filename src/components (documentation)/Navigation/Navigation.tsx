@@ -11,12 +11,12 @@ const Navigation = ({
   onMobileMenuToggle,
 }: NavigationProps) => {
   return (
-    <>
+    <div className="dupa">
       <MobileNavigationHeader onMobileMenuToggle={onMobileMenuToggle} />
 
       <NavigationContainer isMobileMenuOpen={isMobileMenuOpen}>
         <DesktopNavigationHeader />
-        <nav>
+        <nav style={{ height: "344.5px" }}>
           <NavigationItems
             onMobileMenuToggle={onMobileMenuToggle}
             isMobileMenuOpen={isMobileMenuOpen}
@@ -28,7 +28,7 @@ const Navigation = ({
         isMobileMenuOpen={isMobileMenuOpen}
         onClick={onMobileMenuToggle}
       ></NavigationOverlay>
-    </>
+    </div>
   );
 };
 
@@ -49,7 +49,7 @@ export const NavigationContainer = styled.div<{
   left: ${(props) => (props.isMobileMenuOpen ? "0" : "-75%")};
   @media (min-width: 768px) {
     position: unset;
-    height: unset;
+    position: sticky;
   }
 `;
 

@@ -25,6 +25,8 @@ export const DesktopNavigationHeaderContainer = styled.div`
     align-items: center;
     border-bottom: 1px solid ${MAIN_DARK_FONT_COLOR};
     padding: 12px 16px;
+    height: 90px;
+    box-sizing: border-box;
   }
 `;
 

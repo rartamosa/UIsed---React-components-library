@@ -1,19 +1,15 @@
-import { useState } from "react";
-
 import {
   SingleSection,
   SectionSubheader,
   TextSpan,
 } from "../Overview/overviewStyles";
-import TagsInput from "../../components (library)/TagsInput/TagsInput";
-import { tagsDummyData } from "../../components (library)/TagsInput/tagsDummyData";
+import SingleTagsInputExample from "./SingleTagsInputExample";
 
 import CodeSnippet from "../Reusable components/CodeSnippet";
 import { Code } from "../Reusable components/CodeSnippet";
 import BackToTopComponent from "../Reusable components/BackToTopComponent";
 
 const TagsInputUsage = () => {
-  const [tags, setTags] = useState<string[]>([]);
   return (
     <>
       {/* USAGE */}
@@ -22,16 +18,7 @@ const TagsInputUsage = () => {
         <TextSpan>
           Here's a basic usage example of the <Code>tags Input</Code> component:
         </TextSpan>
-        <div style={{ alignSelf: "center" }}>
-          <TagsInput
-            tags={tags}
-            tagsSuggestions={tagsDummyData}
-            onTagAdd={(tag) => setTags([...tags, tag])}
-            onTagRemove={(tagToRemove) =>
-              setTags(tags.filter((tag) => tag !== tagToRemove))
-            }
-          />
-        </div>
+        <SingleTagsInputExample />
         <CodeSnippet
           language="jsx"
           code="&#x3C;TagsInput
@@ -98,17 +85,8 @@ const TagsInputUsage = () => {
       <SingleSection>
         <SectionSubheader>border color</SectionSubheader>
         <TextSpan>Sets the color of the border of the tag container.</TextSpan>
-        <div style={{ alignSelf: "center" }}>
-          <TagsInput
-            tags={tags}
-            tagsSuggestions={tagsDummyData}
-            onTagAdd={(tag) => setTags([...tags, tag])}
-            onTagRemove={(tagToRemove) =>
-              setTags(tags.filter((tag) => tag !== tagToRemove))
-            }
-            containerBorderColor="blue"
-          />
-        </div>
+        <SingleTagsInputExample containerBorderColor="blue" />
+
         <CodeSnippet code="&#x3C;TagsInput containerBorderColor=&#x22;blue&#x22; /&#x3E;" />
       </SingleSection>
 
@@ -119,17 +97,7 @@ const TagsInputUsage = () => {
           Determines the width of the border of the container surrounding the
           tags input component.
         </TextSpan>
-        <div style={{ alignSelf: "center" }}>
-          <TagsInput
-            tags={tags}
-            tagsSuggestions={tagsDummyData}
-            onTagAdd={(tag) => setTags([...tags, tag])}
-            onTagRemove={(tagToRemove) =>
-              setTags(tags.filter((tag) => tag !== tagToRemove))
-            }
-            containerBorderWidth="3px"
-          />
-        </div>
+        <SingleTagsInputExample containerBorderWidth="3px" />
         <CodeSnippet code="&#x3C;TagsInput containerBorderWidth=&#x22;3px&#x22; /&#x3E;" />
       </SingleSection>
 
@@ -144,35 +112,9 @@ const TagsInputUsage = () => {
             gap: "10px",
           }}
         >
-          <TagsInput
-            tags={tags}
-            tagsSuggestions={tagsDummyData}
-            onTagAdd={(tag) => setTags([...tags, tag])}
-            onTagRemove={(tagToRemove) =>
-              setTags(tags.filter((tag) => tag !== tagToRemove))
-            }
-            componentSize="small"
-            placeholder="small"
-          />
-          <TagsInput
-            tags={tags}
-            tagsSuggestions={tagsDummyData}
-            onTagAdd={(tag) => setTags([...tags, tag])}
-            onTagRemove={(tagToRemove) =>
-              setTags(tags.filter((tag) => tag !== tagToRemove))
-            }
-            placeholder="medium"
-          />
-          <TagsInput
-            tags={tags}
-            tagsSuggestions={tagsDummyData}
-            onTagAdd={(tag) => setTags([...tags, tag])}
-            onTagRemove={(tagToRemove) =>
-              setTags(tags.filter((tag) => tag !== tagToRemove))
-            }
-            componentSize="large"
-            placeholder="large"
-          />
+          <SingleTagsInputExample componentSize="small" placeholder="small" />
+          <SingleTagsInputExample componentSize="medium" placeholder="medium" />
+          <SingleTagsInputExample componentSize="large" placeholder="large" />
         </div>
         <CodeSnippet
           code="&#x3C;TagsInput componentSize=&#x22;small&#x22; /&#x3E;
@@ -187,17 +129,7 @@ const TagsInputUsage = () => {
         <TextSpan>
           Sets the border color of the tags suggestions container.
         </TextSpan>
-        <div style={{ alignSelf: "center" }}>
-          <TagsInput
-            tags={tags}
-            tagsSuggestions={tagsDummyData}
-            onTagAdd={(tag) => setTags([...tags, tag])}
-            onTagRemove={(tagToRemove) =>
-              setTags(tags.filter((tag) => tag !== tagToRemove))
-            }
-            tagsSuggestionsBorderColor="green"
-          />
-        </div>
+        <SingleTagsInputExample tagsSuggestionsBorderColor="green" />
         <CodeSnippet code="&#x3C;TagsInput tagsSuggestionsBorderColor=&#x22;green&#x22; /&#x3E;" />
       </SingleSection>
 
@@ -208,17 +140,7 @@ const TagsInputUsage = () => {
           Specifies the width of the border around the tags suggestions
           container.
         </TextSpan>
-        <div style={{ alignSelf: "center" }}>
-          <TagsInput
-            tags={tags}
-            tagsSuggestions={tagsDummyData}
-            onTagAdd={(tag) => setTags([...tags, tag])}
-            onTagRemove={(tagToRemove) =>
-              setTags(tags.filter((tag) => tag !== tagToRemove))
-            }
-            tagsSuggestionsBorderWidth="4px"
-          />
-        </div>
+        <SingleTagsInputExample tagsSuggestionsBorderWidth="4px" />
         <CodeSnippet code="&#x3C;TagsInput tagsSuggestionsBorderWidth=&#x22;4px&#x22; /&#x3E;" />
       </SingleSection>
 
@@ -229,17 +151,7 @@ const TagsInputUsage = () => {
           Sets the background color of the tag input container and tags
           suggestions container.
         </TextSpan>
-        <div style={{ alignSelf: "center" }}>
-          <TagsInput
-            tags={tags}
-            tagsSuggestions={tagsDummyData}
-            onTagAdd={(tag) => setTags([...tags, tag])}
-            onTagRemove={(tagToRemove) =>
-              setTags(tags.filter((tag) => tag !== tagToRemove))
-            }
-            backgroundColor="#FB8500"
-          />
-        </div>
+        <SingleTagsInputExample backgroundColor="#FB8500" />
         <CodeSnippet code="&#x3C;TagsInput backgroundColor=&#x22;#FB8500&#x22; /&#x3E;" />
       </SingleSection>
 
@@ -250,17 +162,7 @@ const TagsInputUsage = () => {
           Used to set the text that appears in the input box before the user
           starts typing.
         </TextSpan>
-        <div style={{ alignSelf: "center" }}>
-          <TagsInput
-            tags={tags}
-            tagsSuggestions={tagsDummyData}
-            onTagAdd={(tag) => setTags([...tags, tag])}
-            onTagRemove={(tagToRemove) =>
-              setTags(tags.filter((tag) => tag !== tagToRemove))
-            }
-            placeholder="Hello"
-          />
-        </div>
+        <SingleTagsInputExample placeholder="Hello" />
         <CodeSnippet code="&#x3C;TagsInput placeholder=&#x22;Hello&#x22; /&#x3E;" />
       </SingleSection>
 
@@ -270,17 +172,7 @@ const TagsInputUsage = () => {
         <TextSpan>
           Specifies the font color of the tags in the tag input field.
         </TextSpan>
-        <div style={{ alignSelf: "center" }}>
-          <TagsInput
-            tags={tags}
-            tagsSuggestions={tagsDummyData}
-            onTagAdd={(tag) => setTags([...tags, tag])}
-            onTagRemove={(tagToRemove) =>
-              setTags(tags.filter((tag) => tag !== tagToRemove))
-            }
-            tagsFontColor="#23E9D1"
-          />
-        </div>
+        <SingleTagsInputExample tagsFontColor="#23E9D1" />
         <CodeSnippet code="&#x3C;TagsInput tagsFontColor=&#x22;#23E9D1&#x22; /&#x3E;" />
       </SingleSection>
 
@@ -290,17 +182,7 @@ const TagsInputUsage = () => {
         <TextSpan>
           Sets the border color of the container when there is an error.
         </TextSpan>
-        <div style={{ alignSelf: "center" }}>
-          <TagsInput
-            tags={tags}
-            tagsSuggestions={tagsDummyData}
-            onTagAdd={(tag) => setTags([...tags, tag])}
-            onTagRemove={(tagToRemove) =>
-              setTags(tags.filter((tag) => tag !== tagToRemove))
-            }
-            errorBorderColor="#E9232C"
-          />
-        </div>
+        <SingleTagsInputExample errorBorderColor="#E9232C" />
         <CodeSnippet code="&#x3C;TagsInput errorBorderColor=&#x22;#E9232C&#x22; /&#x3E;" />
       </SingleSection>
 
@@ -311,17 +193,7 @@ const TagsInputUsage = () => {
           determines whether the component is disabled or not, and if it is set
           to `true`, the user will not be able to interact with the component.
         </TextSpan>
-        <div style={{ alignSelf: "center" }}>
-          <TagsInput
-            tags={tags}
-            tagsSuggestions={tagsDummyData}
-            onTagAdd={(tag) => setTags([...tags, tag])}
-            onTagRemove={(tagToRemove) =>
-              setTags(tags.filter((tag) => tag !== tagToRemove))
-            }
-            isDisabled={true}
-          />
-        </div>
+        <SingleTagsInputExample isDisabled={true} />
         <CodeSnippet code="&#x3C;TagsInput isDisabled={true} /&#x3E;" />
       </SingleSection>
 
@@ -340,33 +212,17 @@ const TagsInputUsage = () => {
             gap: "10px",
           }}
         >
-          <TagsInput
-            tags={tags}
-            tagsSuggestions={tagsDummyData}
-            onTagAdd={(tag) => setTags([...tags, tag])}
-            onTagRemove={(tagToRemove) =>
-              setTags(tags.filter((tag) => tag !== tagToRemove))
-            }
-            tagsSuggestionsContainerPosition="top"
-          />
-          <TagsInput
-            tags={tags}
-            tagsSuggestions={tagsDummyData}
-            onTagAdd={(tag) => setTags([...tags, tag])}
-            onTagRemove={(tagToRemove) =>
-              setTags(tags.filter((tag) => tag !== tagToRemove))
-            }
-            tagsSuggestionsContainerPosition="bottom"
-          />
-        </div>
-        <CodeSnippet
-          code="&#x3C;TagsInput tagsSuggestionsContainerPosition=&#x22;top&#x22; /&#x3E;
+          <SingleTagsInputExample tagsSuggestionsContainerPosition="top" />
+          <SingleTagsInputExample tagsSuggestionsContainerPosition="bottom" />
+          <CodeSnippet
+            code="&#x3C;TagsInput tagsSuggestionsContainerPosition=&#x22;top&#x22; /&#x3E;
           &#x3C;TagsInput tagsSuggestionsContainerPosition=&#x22;right&#x22; /&#x3E;
           &#x3C;TagsInput tagsSuggestionsContainerPosition=&#x22;bottom&#x22; /&#x3E;
           &#x3C;TagsInput tagsSuggestionsContainerPosition=&#x22;left&#x22; /&#x3E;
           
           //&#x60;left&#x60; and &#x60;right&#x60; are designed for desktop versions only"
-        />
+          />
+        </div>
       </SingleSection>
 
       <BackToTopComponent />

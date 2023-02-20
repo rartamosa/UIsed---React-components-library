@@ -4,11 +4,14 @@ type TagSuggestion = {
   color: string;
 };
 
-export type TagInputProps = {
+export type TagInputProps = TagInputExampleProps & {
   tags: string[];
   onTagAdd: (tag: string) => void;
   tagsSuggestions: TagSuggestion[];
   onTagRemove: (tag: string) => void;
+};
+
+export type TagInputExampleProps = {
   containerBorderColor?: string;
   containerBorderWidth?: string;
   componentSize?: "small" | "medium" | "large";

@@ -48,30 +48,31 @@ const DialogUsage = () => {
         </div>
         <CodeSnippet
           language="jsx"
-          code="const [isDialogOpen, setIsDialogOpen] = useState(false);
+          code={`const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-          const onActionLogic = (): void =&#x3E; {
-            console.log(&#x22;Action taken&#x22;);
-            setIsDialogOpen(false);
-          };
+const onActionLogic = (): void => {
+    console.log("Action taken");
+    setIsDialogOpen(false);
+};
           
-          const onCancelLogic = (): void =&#x3E; {
-            console.log(&#x22;Action cancelled&#x22;);
-            setIsDialogOpen(false);
-          };
+const onCancelLogic = (): void => {
+    console.log("Action cancelled");
+    setIsDialogOpen(false);
+  };
           
-          &#x3C;Button onClick={() =&#x3E; setIsDialogOpen(true)}&#x3E;
-  Click to see a general dialog window
-&#x3C;/Button&#x3E;
-&#x3C;Dialog
-  onAction={onActionLogic}
-  onCancel={onCancelLogic}
-  isDialogOpen={isDialogOpen}
-  dialogHeader=&#x22;Dialog header&#x22;
-  dialogBody=&#x22;Dialog body text&#x22;
-  actionButtonText=&#x22;Action button&#x22;
-  cancelButtonText=&#x22;Cancel button&#x22;
-/&#x3E;"
+<Button onClick={() => setIsDialogOpen(true)}>
+    Click to see a general dialog window
+</Button>
+
+<Dialog
+    onAction={onActionLogic}
+    onCancel={onCancelLogic}
+    isDialogOpen={isDialogOpen}
+    dialogHeader="Dialog header"
+    dialogBody="Dialog body text"
+    actionButtonText="Action button"
+    cancelButtonText="Cancel button"
+/>`}
         />
       </SingleSection>
 

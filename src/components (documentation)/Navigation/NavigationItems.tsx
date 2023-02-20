@@ -45,7 +45,7 @@ const NavigationItems = ({
   const [isComponentsSectionOpen, setIsComponentsSectionOpen] = useState(true);
 
   useEffect(() => {
-    if (isMobileMenuOpen) {
+    if (isMobileMenuOpen && window.innerWidth < 768) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";

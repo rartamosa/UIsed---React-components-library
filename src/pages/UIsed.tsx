@@ -19,10 +19,7 @@ const UIsed = () => {
 
   return (
     <>
-      {/* TODO coś jest nie tak ze scrollem w desktopie */}
-
       <Navigation //TODO animacja na otwarcie i zamknięcie mobilnego menu
-        // TODO position sticky przy scrollu na desktopie
         isMobileMenuOpen={isMobileMenuOpen}
         onMobileMenuToggle={handleMobileMenuToggle}
       />
@@ -34,13 +31,12 @@ const UIsed = () => {
         <Route path="select/*" element={<Select />} />
 
         {/* TODO background */}
-        {/* TODO scroll na zmountowanie - dlaczzego jestem nizej? */}
-        {/* TODO osobne state'y? widać zmiany naraz na wszystkich inputach */}
         <Route path="tags-input/*" element={<TagsInput />} />
 
         {/* TODO szerokość kolumn w gridzie - nazwy kolumn nie spinają się szerokością z zawartością komórek */}
         <Route path="table/*" element={<Table />} />
 
+        {/* TODO stylowanie nakłada się na wszystkie dialogi, a nie tylko na pojedyncze przykłady */}
         <Route path="dialog/*" element={<Dialog />} />
 
         <Route path="toast/*" element={<Toast />} />
