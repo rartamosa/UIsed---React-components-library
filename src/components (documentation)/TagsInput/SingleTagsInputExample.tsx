@@ -23,25 +23,3 @@ const SingleTagsInputExample = (tagInputProps: TagInputExampleProps) => {
 };
 
 export default SingleTagsInputExample;
-
-// export type SingleTagsInputExample = {
-//   TagsInputComponent: React.FC;
-// };
-
-// const withAddProduct = (InnerComponent) => {
-//   const WrapperComponent = (props) => {
-//     const addProduct = (id) => {
-//       // fetch(`buy-url/${id}`)
-//       //   .then((res) => res.json())
-//       //   .then((data) => console.log(data));
-
-//       console.log(id);
-//     };
-
-//     return <InnerComponent id={props.id} addProduct={addProduct} />;
-//   };
-
-//   return WrapperComponent;
-// };
-
-// export default withAddProduct;

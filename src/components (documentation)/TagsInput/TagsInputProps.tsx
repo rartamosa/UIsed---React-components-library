@@ -26,7 +26,8 @@ const TagsInputProps = () => {
 
       <SingleProp
         propName="onTagAdd"
-        description="A callback function that gets called when a tag is added to the component."
+        description="A callback function that gets called when a tag is added to the component. It
+        has to correspond to the state in parent component."
         type="(tag: string) => void"
         isRequired={true}
         defaultValue="{(tag) => setTags([...tags, tag])}"
@@ -34,7 +35,8 @@ const TagsInputProps = () => {
 
       <SingleProp
         propName="onTagRemove"
-        description="Specifies a function to be called when a tag is removed from the input."
+        description="Specifies a function to be called when a tag is removed from the input. It
+        has to correspond to the state in parent component."
         type="(tag: string) => void"
         isRequired={true}
         defaultValue="{(tagToRemove) => setTags(tags.filter((tag) => tag !== tagToRemove))}"

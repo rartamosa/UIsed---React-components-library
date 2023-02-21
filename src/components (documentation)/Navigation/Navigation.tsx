@@ -11,7 +11,7 @@ const Navigation = ({
   onMobileMenuToggle,
 }: NavigationProps) => {
   return (
-    <div className="dupa">
+    <div>
       <MobileNavigationHeader onMobileMenuToggle={onMobileMenuToggle} />
 
       <NavigationContainer isMobileMenuOpen={isMobileMenuOpen}>

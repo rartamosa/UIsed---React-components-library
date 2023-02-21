@@ -35,13 +35,13 @@ const TableUsage = () => {
         </TextSpan>
         <CodeSnippet
           language="js"
-          code="dummyColumnNames = [
-            &#x22;Desserts&#x22;,
-            &#x22;Calories&#x22;,
-            &#x22;Fat (g)&#x22;,
-            &#x22;Carbs (g)&#x22;,
-            &#x22;Protein (g)&#x22;,
-          ];"
+          code={`dummyColumnNames = [ 
+  "Desserts",
+  "Calories",
+  "Fat (g)",
+  "Carbs (g)",
+  "Protein (g)",
+];`}
         />
       </SingleSection>
 
@@ -55,14 +55,13 @@ const TableUsage = () => {
         </TextSpan>
         <CodeSnippet
           language="js"
-          code="dummyTableRows = [
-            {
-              rowName: &#x22;Frozen yoghurt&#x22;,
-              calories: 159,
-              fat: 6.0,
-              carbs: 24,
-              protein: 4.0,
-            };"
+          code={`dummyTableRows = [{
+  rowName: "Frozen yoghurt",
+  calories: 159,
+  fat: 6.0,
+  carbs: 24,
+  protein: 4.0,
+}];`}
         />
       </SingleSection>
 
@@ -79,7 +78,11 @@ const TableUsage = () => {
             headerBackGroundColor="#F8CFA2"
           />
         </div>
-        <CodeSnippet code="&#x3C;Table headerBackGroundColor=&#x22;#F8CFA2&#x22; /&#x3E;" />
+        <CodeSnippet
+          code={`<Table
+  headerBackGroundColor="#F8CFA2"
+/>`}
+        />
       </SingleSection>
 
       {/* denseRows */}
@@ -95,7 +98,7 @@ const TableUsage = () => {
             denseRows={true}
           />
         </div>
-        <CodeSnippet code="&#x3C;Table denseRows={true} /&#x3E;" />
+        <CodeSnippet code={`<Table denseRows={true} />`} />
       </SingleSection>
 
       {/* iconColor */}
@@ -112,7 +115,7 @@ const TableUsage = () => {
             iconColor="#FB8500"
           />
         </div>
-        <CodeSnippet code="&#x3C;Table iconColor=&#x22;#FB8500&#x22; /&#x3E;" />
+        <CodeSnippet code={`<Table iconColor="#FB8500" />`} />
       </SingleSection>
 
       {/* borderColor */}
@@ -128,7 +131,7 @@ const TableUsage = () => {
             borderColor="#B0A2F8"
           />
         </div>
-        <CodeSnippet code="&#x3C;Table borderColor=&#x22;#B0A2F8&#x22; /&#x3E;" />
+        <CodeSnippet code={`<Table borderColor="#B0A2F8" />`} />
       </SingleSection>
 
       {/* borderWidth */}
@@ -144,7 +147,7 @@ const TableUsage = () => {
             borderWidth="4px"
           />
         </div>
-        <CodeSnippet code="&#x3C;Table borderWidth=&#x22;4px&#x22; /&#x3E;" />
+        <CodeSnippet code={`<Table borderWidth="4px" />`} />
       </SingleSection>
 
       {/* hoverColor */}
@@ -158,7 +161,7 @@ const TableUsage = () => {
             hoverColor="#A2F8F3"
           />
         </div>
-        <CodeSnippet code="&#x3C;Table hoverColor=&#x22;#A2F8F3&#x22; /&#x3E;" />
+        <CodeSnippet code={`<Table hoverColor="#A2F8F3" />`} />
       </SingleSection>
 
       {/* allowSorting */}
@@ -179,22 +182,49 @@ const TableUsage = () => {
             allowSorting={false}
           />
         </div>
-        <CodeSnippet code="&#x3C;Table allowSorting={false} /&#x3E;" />
+        <CodeSnippet code={`<Table allowSorting={false} />`} />
       </SingleSection>
 
       {/* columnWidth */}
       <SingleSection>
         <SectionSubheader>column width</SectionSubheader>
-        <TextSpan>do zrobienia!!!!</TextSpan>
+        <TextSpan>
+          The "columnWidth" prop is used to specify the width of the columns in
+          the <Code>table</Code>. Its default value is 100px. The
+          "firstColumnWidth" prop specifies the width of the first column in the{" "}
+          <Code>Table</Code>. Its default value is 200px.
+        </TextSpan>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <Table
             columnNames={dummyColumnNames}
             tableRows={dummyTableRows}
-            firstColumnWidth="200px"
-            columnWidth="300px"
+            firstColumnWidth="300px"
+            columnWidth="200px"
           />
         </div>
-        <CodeSnippet code="&#x3C;Table allowSorting={false} /&#x3E;" />
+        <CodeSnippet
+          code={`<Table
+  firstColumnWidth="300px"
+  columnWidth="200px"
+/>`}
+        />
+      </SingleSection>
+
+      {/* stickyHeader */}
+      <SingleSection>
+        <SectionSubheader>sticky header</SectionSubheader>
+        <TextSpan>
+          Used to make the <Code>table</Code> header sticky so that it remains
+          visible at the top of the table even when the user scrolls down.
+        </TextSpan>
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          <Table
+            columnNames={dummyColumnNames}
+            tableRows={dummyTableRows}
+            stickyHeader={false}
+          />
+        </div>
+        <CodeSnippet code={`<Table stickyHeader={false} />`} />
       </SingleSection>
 
       <BackToTopComponent />

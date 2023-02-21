@@ -12,7 +12,7 @@ const BackToTopComponent = () => {
 
   return (
     <BackToTopContainer onClick={handleScroll}>
-      <BackToTop> back to top</BackToTop>
+      <BackToTop>back to top</BackToTop>
       <FontAwesomeIcon icon={["fas", "angles-up"]} />
     </BackToTopContainer>
   );

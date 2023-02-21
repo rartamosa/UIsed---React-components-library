@@ -21,11 +21,14 @@ const TagsInputUsage = () => {
         <SingleTagsInputExample />
         <CodeSnippet
           language="jsx"
-          code="&#x3C;TagsInput
-          tags=&#123;tags&#125;
-          tagsSuggestions=&#123;tagsDummyData&#125;
-          onTagAdd=&#123;(tag) =&#x3E; setTags(&#91;...tags, tag&#93;)&#125;
-        /&#x3E;"
+          code={`<TagsInput
+  tags={tags}
+  tagsSuggestions={tagsDummyData}
+  onTagAdd={(tag: string) => setTags([...tags, tag])}
+  onTagRemove={(tagToRemove: string) =>
+    setTags(tags.filter((tag) => tag !== tagToRemove))
+  }
+/>`}
         />
       </SingleSection>
 
@@ -34,50 +37,67 @@ const TagsInputUsage = () => {
         <SectionSubheader>tags</SectionSubheader>
         <TextSpan>
           The "tags" prop is an array of objects that represent the currently
-          selected tags.
+          selected tags. It has to correspond to the state in parent component:
+          <br />
+          <Code
+            style={{ textTransform: "unset" }}
+          >{`const [tags, setTags] = useState<string[]>([]);`}</Code>
         </TextSpan>
       </SingleSection>
 
       {/* tagsSuggestions */}
       <SingleSection>
-        <SectionSubheader>tagsSuggestions</SectionSubheader>
+        <SectionSubheader>tags suggestions</SectionSubheader>
         <TextSpan>
           An array of objects that contains the suggestions for tags to be added
           to the TagInput component.
         </TextSpan>
         <CodeSnippet
           language="js"
-          code="tagsDummyData = [
-            &#123;
-              _id: &#x22;6382710cc74631f3ec3bce6a&#x22;,
-              name: &#x22;Development&#x22;,
-              color: &#x22;#D1FADF&#x22;,
-            &#125;,
-          ];"
+          code={`tagsDummyData = [{ 
+  _id: "6382710cc74631f3ec3bce6a",
+  name: "Development",
+  color: "#D1FADF",
+}];`}
         />
       </SingleSection>
 
       {/* onTagAdd */}
       <SingleSection>
-        <SectionSubheader>onTagAdd</SectionSubheader>
-        <TextSpan>A function that is called when a new tag is added.</TextSpan>
+        <SectionSubheader>functionality of adding new tag</SectionSubheader>
+        <TextSpan>
+          A function that is called when a new tag is added. It has to
+          correspond to the state in parent component:
+          <br />
+          <Code
+            style={{ textTransform: "unset" }}
+          >{`const [tags, setTags] = useState<string[]>([]);`}</Code>
+        </TextSpan>
         <CodeSnippet
           language="jsx"
-          code="onTagAdd=&#123;(tag) =&#x3E; setTags([...tags, tag])&#125;"
+          code={`onTagAdd={(tag) => setTags([...tags, tag])}`}
         />
       </SingleSection>
 
       {/* onTagRemove */}
       <SingleSection>
-        <SectionSubheader>onTagRemove</SectionSubheader>
+        <SectionSubheader>functionality of removing a tag</SectionSubheader>
         <TextSpan>
           A function that gets called when a tag is removed from the input
           field. It takes the removed tag as an argument and can be used to
-          update the state of the component or trigger any necessary actions.
+          update the state of the component or trigger any necessary actions. It
+          has to correspond to the state in parent component:
+          <br />
+          <Code
+            style={{ textTransform: "unset" }}
+          >{`const [tags, setTags] = useState<string[]>([]);`}</Code>
         </TextSpan>
         <CodeSnippet
           language="jsx"
-          code="onTagRemove=&#123;(tagToRemove) =&#x3E; setTags(tags.filter((tag) =&#x3E; tag !== tagToRemove))&#125;"
+          code={`onTagRemove = {(tagToRemove) =>
+  setTags(tags.filter((tag) => 
+  tag !== tagToRemove)
+)}`}
         />
       </SingleSection>
 
@@ -87,18 +107,18 @@ const TagsInputUsage = () => {
         <TextSpan>Sets the color of the border of the tag container.</TextSpan>
         <SingleTagsInputExample containerBorderColor="blue" />
 
-        <CodeSnippet code="&#x3C;TagsInput containerBorderColor=&#x22;blue&#x22; /&#x3E;" />
+        <CodeSnippet code={`<TagsInput containerBorderColor="blue" />`} />
       </SingleSection>
 
       {/* containerBorderWidth */}
       <SingleSection>
-        <SectionSubheader>border witdh</SectionSubheader>
+        <SectionSubheader>border width</SectionSubheader>
         <TextSpan>
           Determines the width of the border of the container surrounding the
           tags input component.
         </TextSpan>
         <SingleTagsInputExample containerBorderWidth="3px" />
-        <CodeSnippet code="&#x3C;TagsInput containerBorderWidth=&#x22;3px&#x22; /&#x3E;" />
+        <CodeSnippet code={`<TagsInput containerBorderWidth="3px" />`} />
       </SingleSection>
 
       {/* componentSize */}
@@ -117,9 +137,9 @@ const TagsInputUsage = () => {
           <SingleTagsInputExample componentSize="large" placeholder="large" />
         </div>
         <CodeSnippet
-          code="&#x3C;TagsInput componentSize=&#x22;small&#x22; /&#x3E;
-        &#x3C;TagsInput componentSize=&#x22;medium&#x22; /&#x3E;
-        &#x3C;TagsInput componentSize=&#x22;large&#x22; /&#x3E;"
+          code={`<TagsInput componentSize="small" placeholder="small" />
+<TagsInput componentSize="medium" placeholder="medium" />
+<TagsInput componentSize="large" placeholder="large" />`}
         />
       </SingleSection>
 
@@ -130,7 +150,9 @@ const TagsInputUsage = () => {
           Sets the border color of the tags suggestions container.
         </TextSpan>
         <SingleTagsInputExample tagsSuggestionsBorderColor="green" />
-        <CodeSnippet code="&#x3C;TagsInput tagsSuggestionsBorderColor=&#x22;green&#x22; /&#x3E;" />
+        <CodeSnippet
+          code={`<TagsInput tagsSuggestionsBorderColor="green" />`}
+        />
       </SingleSection>
 
       {/* tagsSuggestionsBorderWidth */}
@@ -141,7 +163,7 @@ const TagsInputUsage = () => {
           container.
         </TextSpan>
         <SingleTagsInputExample tagsSuggestionsBorderWidth="4px" />
-        <CodeSnippet code="&#x3C;TagsInput tagsSuggestionsBorderWidth=&#x22;4px&#x22; /&#x3E;" />
+        <CodeSnippet code={`<TagsInput tagsSuggestionsBorderWidth="4px" />`} />
       </SingleSection>
 
       {/* backgroundColor */}
@@ -152,7 +174,7 @@ const TagsInputUsage = () => {
           suggestions container.
         </TextSpan>
         <SingleTagsInputExample backgroundColor="#FB8500" />
-        <CodeSnippet code="&#x3C;TagsInput backgroundColor=&#x22;#FB8500&#x22; /&#x3E;" />
+        <CodeSnippet code={`<TagsInput backgroundColor="#FB8500" />`} />
       </SingleSection>
 
       {/* placeholder */}
@@ -163,7 +185,7 @@ const TagsInputUsage = () => {
           starts typing.
         </TextSpan>
         <SingleTagsInputExample placeholder="Hello" />
-        <CodeSnippet code="&#x3C;TagsInput placeholder=&#x22;Hello&#x22; /&#x3E;" />
+        <CodeSnippet code={`<TagsInput placeholder="Hello" />`} />
       </SingleSection>
 
       {/* tagsFontColor */}
@@ -173,7 +195,7 @@ const TagsInputUsage = () => {
           Specifies the font color of the tags in the tag input field.
         </TextSpan>
         <SingleTagsInputExample tagsFontColor="#23E9D1" />
-        <CodeSnippet code="&#x3C;TagsInput tagsFontColor=&#x22;#23E9D1&#x22; /&#x3E;" />
+        <CodeSnippet code={`<TagsInput tagsFontColor="#23E9D1" />`} />
       </SingleSection>
 
       {/* errorBorderColor */}
@@ -183,7 +205,7 @@ const TagsInputUsage = () => {
           Sets the border color of the container when there is an error.
         </TextSpan>
         <SingleTagsInputExample errorBorderColor="#E9232C" />
-        <CodeSnippet code="&#x3C;TagsInput errorBorderColor=&#x22;#E9232C&#x22; /&#x3E;" />
+        <CodeSnippet code={`<TagsInput errorBorderColor="#E9232C" />`} />
       </SingleSection>
 
       {/* isDisabled */}
@@ -194,7 +216,7 @@ const TagsInputUsage = () => {
           to `true`, the user will not be able to interact with the component.
         </TextSpan>
         <SingleTagsInputExample isDisabled={true} />
-        <CodeSnippet code="&#x3C;TagsInput isDisabled={true} /&#x3E;" />
+        <CodeSnippet code={`<TagsInput isDisabled={true} />`} />
       </SingleSection>
 
       {/* tagsSuggestionsContainerPosition */}
@@ -215,12 +237,11 @@ const TagsInputUsage = () => {
           <SingleTagsInputExample tagsSuggestionsContainerPosition="top" />
           <SingleTagsInputExample tagsSuggestionsContainerPosition="bottom" />
           <CodeSnippet
-            code="&#x3C;TagsInput tagsSuggestionsContainerPosition=&#x22;top&#x22; /&#x3E;
-          &#x3C;TagsInput tagsSuggestionsContainerPosition=&#x22;right&#x22; /&#x3E;
-          &#x3C;TagsInput tagsSuggestionsContainerPosition=&#x22;bottom&#x22; /&#x3E;
-          &#x3C;TagsInput tagsSuggestionsContainerPosition=&#x22;left&#x22; /&#x3E;
-          
-          //&#x60;left&#x60; and &#x60;right&#x60; are designed for desktop versions only"
+            code={`<TagsInput tagsSuggestionsContainerPosition="top" />
+<TagsInput tagsSuggestionsContainerPosition="right" />
+<TagsInput tagsSuggestionsContainerPosition="bottom" />
+<TagsInput tagsSuggestionsContainerPosition="left" />
+//"left" and "right" are designed for desktop versions only`}
           />
         </div>
       </SingleSection>

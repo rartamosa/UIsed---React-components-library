@@ -38,6 +38,7 @@ const Overview = () => {
           <Image
             src={process.env.PUBLIC_URL + "/assets/developer_illustration.png"}
             alt="illustration"
+            style={{ width: "200px" }}
           />
         </SingleSection>
 

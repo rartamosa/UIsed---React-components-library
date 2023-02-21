@@ -87,6 +87,30 @@ const TableProps = () => {
         defaultValue="true"
       />
 
+      <SingleProp
+        propName="columnWidth"
+        description="A string type prop that determines the width of the columns in the table. Developers working with this reusable component should set this prop to a number that represents the desired width in pixels."
+        type="string"
+        isRequired={false}
+        defaultValue="100px"
+      />
+
+      <SingleProp
+        propName="firstColumnWidth"
+        description="Used to set the width of the first column in the table and is a string indicating the pixel width of the column."
+        type="string"
+        isRequired={false}
+        defaultValue="200px"
+      />
+
+      <SingleProp
+        propName="stickyHeader"
+        description={`The "stickyHeader" prop is a boolean that controls whether the table header should be sticky or not, allowing it to remain visible as the user scrolls down the table. When set to true, the header will stick to the top of the table.`}
+        type="string"
+        isRequired={false}
+        defaultValue="true"
+      />
+
       <BackToTopComponent />
     </>
   );

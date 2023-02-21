@@ -1,17 +1,25 @@
 export type HorizontalPosition = "left" | "center" | "right";
 export type VerticalPosition = "top" | "center" | "bottom";
 
-export type DialogProps = {
+export type DialogProps = DialogExampleProps & {
   onAction: () => void;
   onCancel: () => void;
   isDialogOpen: boolean;
-  buttonProps?: React.CSSProperties;
   dialogHeader: string;
   dialogBody: string;
-  actionButtonColor?: string;
-  cancelButtonColor?: string;
   actionButtonText: string;
   cancelButtonText: string;
+};
+
+export type DialogExampleProps = {
+  mainButtonText: string;
+  dialogHeader?: string;
+  dialogBody?: string;
+  actionButtonText?: string;
+  cancelButtonText?: string;
+  buttonProps?: React.CSSProperties;
+  actionButtonColor?: string;
+  cancelButtonColor?: string;
   overlayColor?: string;
   dialogPosition?:
     | Exclude<`${HorizontalPosition}-${VerticalPosition}`, "center-center">

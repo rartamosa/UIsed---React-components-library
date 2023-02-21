@@ -1,4 +1,5 @@
-import { Route, Routes } from "react-router-dom";
+import { useEffect } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
 
 import { MainContainer } from "../Overview/overviewStyles";
 import ComponentPage from "../Reusable components/ComponentPage";
@@ -11,6 +12,12 @@ import TableUsage from "./TableUsage";
 import TableProps from "./TableProps";
 
 const Table = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate("/uised/table/usage");
+  }, []);
+
   return (
     <MainContainer style={{ gap: "30px" }}>
       <ComponentPage

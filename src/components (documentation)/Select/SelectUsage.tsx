@@ -25,7 +25,7 @@ const SelectUsage = () => {
 
         <CodeSnippet
           language="html"
-          code="&lt;Select selectOptions=&#123;selectDummyData&#125; /&gt;"
+          code={`<Select selectOptions={selectDummyData} />`}
         />
       </SingleSection>
 
@@ -41,9 +41,7 @@ const SelectUsage = () => {
           <Select selectOptions={selectDummyData} placeholder="Hello!" />
         </div>
         <CodeSnippet
-          code="&#x3C;Select
-        placeholder=&#x22;Hello!&#x22;
-      /&#x3E;"
+          code={`<Select selectOptions={selectDummyData} placeholder="Hello!" />`}
         />
       </SingleSection>
 
@@ -63,7 +61,13 @@ const SelectUsage = () => {
             containerBorderWidth="3px"
           />
         </div>
-        <CodeSnippet code="&#x3C;Select containerBorderColor=&#x22;#FB8500&#x22; containerBorderWidth=&#x22;3px&#x22; /&#x3E;" />
+        <CodeSnippet
+          code={`<Select
+  selectOptions={selectDummyData}
+  containerBorderColor="#FB8500"
+  containerBorderWidth="3px"
+/>`}
+        />
       </SingleSection>
 
       {/* SIZE */}
@@ -96,9 +100,11 @@ const SelectUsage = () => {
           />
         </div>
         <CodeSnippet
-          code="&#x3C;Select componentSize=&#x22;small&#x22; /&#x3E;
-&#x3C;Select componentSize=&#x22;medium&#x22; /&#x3E;
-&#x3C;Select componentSize=&#x22;large&#x22; /&#x3E;"
+          code={`<Select
+  componentSize="small"
+  componentSize="medium"
+  componentSize="large"
+/>`}
         />
       </SingleSection>
 
@@ -113,7 +119,7 @@ const SelectUsage = () => {
         <div style={{ alignSelf: "center" }}>
           <Select selectOptions={selectDummyData} backgroundColor="#FCC0CB" />
         </div>
-        <CodeSnippet code="&#x3C;Select backgroundColor=&#x22;#FCC0CB&#x22; /&#x3E;" />
+        <CodeSnippet code={`<Select backgroundColor="#FCC0CB" />`} />
       </SingleSection>
 
       {/* SHOULD CLOSE ON CLEAR */}
@@ -128,7 +134,7 @@ const SelectUsage = () => {
         <div style={{ alignSelf: "center" }}>
           <Select selectOptions={selectDummyData} shouldCloseOnClear={true} />
         </div>
-        <CodeSnippet code="&#x3C;Select shouldCloseOnClear=&#123;true&#125; /&#x3E;" />
+        <CodeSnippet code={`<Select shouldCloseOnClear={true} />`} />
       </SingleSection>
 
       {/* IS DISABLED */}
@@ -144,7 +150,7 @@ const SelectUsage = () => {
         <div style={{ alignSelf: "center" }}>
           <Select selectOptions={selectDummyData} isDisabled={true} />
         </div>
-        <CodeSnippet code="&#x3C;Select isDisabled=&#123;true&#125; /&#x3E;" />
+        <CodeSnippet code={`<Select isDisabled={true} />`} />
       </SingleSection>
 
       {/* ERROR BORDER COLOR */}
@@ -159,7 +165,7 @@ const SelectUsage = () => {
         <div style={{ alignSelf: "center" }}>
           <Select selectOptions={selectDummyData} errorBorderColor="violet" />
         </div>
-        <CodeSnippet code="&#x3C;Select errorBorderColor=&#x22;violet&#x22; /&#x3E;" />
+        <CodeSnippet code={`<Select errorBorderColor="violet" />`} />
       </SingleSection>
 
       {/* ICON COLOR */}
@@ -172,7 +178,7 @@ const SelectUsage = () => {
         <div style={{ alignSelf: "center" }}>
           <Select selectOptions={selectDummyData} iconColor="#2338E9" />
         </div>
-        <CodeSnippet code="&#x3C;Select iconColor=&#x22;#2338E9&#x22; /&#x3E;" />
+        <CodeSnippet code={`<Select iconColor="#2338E9" />`} />
       </SingleSection>
 
       {/* CUSTOM ICON */}
@@ -185,7 +191,7 @@ const SelectUsage = () => {
         <div style={{ alignSelf: "center" }}>
           <Select selectOptions={selectDummyData} customIcon="sun" />
         </div>
-        <CodeSnippet code="&#x3C;Select customIcon=&#x22;sun&#x22; /&#x3E;" />
+        <CodeSnippet code={`<Select customIcon="sun" />`} />
       </SingleSection>
 
       <BackToTopComponent />
