@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
 
 import { MainContainer } from "../Overview/overviewStyles";
 import ComponentPage from "../Reusable components/ComponentPage";
@@ -9,13 +9,17 @@ import {
   InnerNavigationOption,
 } from "../Reusable components/reusableComponentsStyles";
 import DialogUsage from "./DialogUsage";
+import DialogProps from "./DialogProps";
 
 const Dialog = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
-    navigate("/uised/dialog/usage");
-  }, []);
+    if (location.pathname === "/uised/dialog") {
+      navigate("/uised/dialog/usage");
+    }
+  }, [location.pathname, navigate]);
 
   return (
     <MainContainer style={{ gap: "30px" }}>
@@ -34,7 +38,7 @@ const Dialog = () => {
       </InnerNavigationContainer>
       <Routes>
         <Route path="usage" element={<DialogUsage />} />
-        <Route path="props" element={<div>propsssss</div>} />
+        <Route path="props" element={<DialogProps />} />
       </Routes>
       <Background />
     </MainContainer>

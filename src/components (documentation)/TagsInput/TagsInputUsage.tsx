@@ -236,14 +236,14 @@ const TagsInputUsage = () => {
         >
           <SingleTagsInputExample tagsSuggestionsContainerPosition="top" />
           <SingleTagsInputExample tagsSuggestionsContainerPosition="bottom" />
-          <CodeSnippet
-            code={`<TagsInput tagsSuggestionsContainerPosition="top" />
+        </div>
+        <CodeSnippet
+          code={`<TagsInput tagsSuggestionsContainerPosition="top" />
 <TagsInput tagsSuggestionsContainerPosition="right" />
 <TagsInput tagsSuggestionsContainerPosition="bottom" />
 <TagsInput tagsSuggestionsContainerPosition="left" />
 //"left" and "right" are designed for desktop versions only`}
-          />
-        </div>
+        />
       </SingleSection>
 
       <BackToTopComponent />

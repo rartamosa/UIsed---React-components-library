@@ -25,7 +25,7 @@ const DialogUsage = () => {
           dialogBody="Dialog body"
           actionButtonText="Action button"
           cancelButtonText="Cancel button"
-          mainButtonText="Click to see a general Dialog window"
+          mainButtonText="a general Dialog window"
         />
         <CodeSnippet
           language="jsx"
@@ -83,8 +83,8 @@ const onCancelLogic = (): void => {
         </TextSpan>
         <CodeSnippet
           language="js"
-          code={`const onActionLogic = (): void => {
-  console.log("Action taken");
+          code={`const onCancelLogic = (): void => {
+  console.log("Action cancelled");
   setIsDialogOpen(false);
 };`}
         />
@@ -122,7 +122,7 @@ const [isDialogOpen, setIsDialogOpen] = useState(false);`}
           dialogBody="Dialog body"
           actionButtonText="Action button"
           cancelButtonText="Cancel button"
-          mainButtonText="Click to see Dialog with custom header"
+          mainButtonText="Dialog with custom header"
         />
         <CodeSnippet code={`<Dialog dialogHeader="Custom Dialog header" />`} />
       </SingleSection>
@@ -143,7 +143,7 @@ const [isDialogOpen, setIsDialogOpen] = useState(false);`}
           dialogBody="Custom Dialog body text"
           actionButtonText="Action button"
           cancelButtonText="Cancel button"
-          mainButtonText="Click to see Dialog with a custom body text"
+          mainButtonText="Dialog with a custom body text"
         />
         <CodeSnippet code={`<Dialog dialogBody="Custom dialog body text" />`} />
       </SingleSection>
@@ -164,7 +164,7 @@ const [isDialogOpen, setIsDialogOpen] = useState(false);`}
           dialogBody="Dialog body"
           actionButtonText="Custom action text"
           cancelButtonText="Cancel button"
-          mainButtonText="Click to see Dialog with a custom action button text"
+          mainButtonText="Dialog with a custom action button text"
         />
         <CodeSnippet
           code={`<Dialog actionButtonText="Custom action text" />`}
@@ -187,7 +187,7 @@ const [isDialogOpen, setIsDialogOpen] = useState(false);`}
           dialogBody="Dialog body"
           actionButtonText="Action button"
           cancelButtonText="Custom cancel text"
-          mainButtonText="Click to see Dialog with a custom cancel button text"
+          mainButtonText="Dialog with a custom cancel button text"
         />
         <CodeSnippet
           code={`<Dialog cancelButtonText="Custom cancel text" />`}
@@ -211,7 +211,7 @@ const [isDialogOpen, setIsDialogOpen] = useState(false);`}
           dialogBody="Dialog body"
           actionButtonText="Action button"
           cancelButtonText="Cancel button"
-          mainButtonText="Click to see Dialog with customized buttons"
+          mainButtonText="Dialog with customized buttons"
           buttonProps={{ backgroundColor: "#A2F8F3", fontSize: "20px" }}
         />
         <CodeSnippet
@@ -235,7 +235,7 @@ const [isDialogOpen, setIsDialogOpen] = useState(false);`}
           dialogBody="Dialog body"
           actionButtonText="Action button"
           cancelButtonText="Cancel button"
-          mainButtonText="Click to see Dialog with a customized action button"
+          mainButtonText="Dialog with a customized action button"
           actionButtonColor="#8CEE6D"
         />
         <CodeSnippet code={`<Dialog actionButtonColor="#8CEE6D" />`} />
@@ -257,7 +257,7 @@ const [isDialogOpen, setIsDialogOpen] = useState(false);`}
           dialogBody="Dialog body"
           actionButtonText="Action button"
           cancelButtonText="Cancel button"
-          mainButtonText="Click to see Dialog with a customized cancel button"
+          mainButtonText="Dialog with a customized cancel button"
           cancelButtonColor="#EC4747"
         />
         <CodeSnippet code={`<Dialog cancelButtonColor="#EC4747" />`} />
@@ -278,7 +278,7 @@ const [isDialogOpen, setIsDialogOpen] = useState(false);`}
           dialogBody="Dialog body"
           actionButtonText="Action button"
           cancelButtonText="Cancel button"
-          mainButtonText="Click to see Dialog with a customized overlay"
+          mainButtonText="Dialog with a customized overlay"
           overlayColor="rgba(177, 248, 244, 0.6)"
         />
         <CodeSnippet
@@ -304,7 +304,7 @@ const [isDialogOpen, setIsDialogOpen] = useState(false);`}
             dialogBody="Dialog body"
             actionButtonText="Action button"
             cancelButtonText="Cancel button"
-            mainButtonText="Click to see Dialog in the top left corner"
+            mainButtonText="Dialog in the top left corner"
             dialogPosition="left-top"
           />
           <SingleDialogExample
@@ -315,7 +315,7 @@ const [isDialogOpen, setIsDialogOpen] = useState(false);`}
             dialogBody="Dialog body"
             actionButtonText="Action button"
             cancelButtonText="Cancel button"
-            mainButtonText="Click to see Dialog in the center top position"
+            mainButtonText="Dialog in the center top position"
             dialogPosition="center-top"
           />
           <SingleDialogExample
@@ -326,7 +326,7 @@ const [isDialogOpen, setIsDialogOpen] = useState(false);`}
             dialogBody="Dialog body"
             actionButtonText="Action button"
             cancelButtonText="Cancel button"
-            mainButtonText="Click to see Dialog in the top right corner"
+            mainButtonText="Dialog in the top right corner"
             dialogPosition="right-top"
           />
           <SingleDialogExample
@@ -337,7 +337,7 @@ const [isDialogOpen, setIsDialogOpen] = useState(false);`}
             dialogBody="Dialog body"
             actionButtonText="Action button"
             cancelButtonText="Cancel button"
-            mainButtonText="Click to see Dialog in the center left position"
+            mainButtonText="Dialog in the center left position"
             dialogPosition="left-center"
           />
           <SingleDialogExample
@@ -348,7 +348,7 @@ const [isDialogOpen, setIsDialogOpen] = useState(false);`}
             dialogBody="Dialog body"
             actionButtonText="Action button"
             cancelButtonText="Cancel button"
-            mainButtonText="Click to see Dialog in the center right position"
+            mainButtonText="Dialog in the center right position"
             dialogPosition="right-center"
           />
           <SingleDialogExample
@@ -359,7 +359,7 @@ const [isDialogOpen, setIsDialogOpen] = useState(false);`}
             dialogBody="Dialog body"
             actionButtonText="Action button"
             cancelButtonText="Cancel button"
-            mainButtonText="Click to see Dialog in the bottom left position"
+            mainButtonText="Dialog in the bottom left position"
             dialogPosition="left-bottom"
           />
           <SingleDialogExample
@@ -370,7 +370,7 @@ const [isDialogOpen, setIsDialogOpen] = useState(false);`}
             dialogBody="Dialog body"
             actionButtonText="Action button"
             cancelButtonText="Cancel button"
-            mainButtonText="Click to see Dialog in the bottom center position"
+            mainButtonText="Dialog in the bottom center position"
             dialogPosition="center-bottom"
           />
           <SingleDialogExample
@@ -381,7 +381,7 @@ const [isDialogOpen, setIsDialogOpen] = useState(false);`}
             dialogBody="Dialog body"
             actionButtonText="Action button"
             cancelButtonText="Cancel button"
-            mainButtonText="Click to see Dialog in the bottom right position"
+            mainButtonText="Dialog in the bottom right position"
             dialogPosition="right-bottom"
           />
         </div>
@@ -412,7 +412,7 @@ const [isDialogOpen, setIsDialogOpen] = useState(false);`}
           dialogBody="Dialog body"
           actionButtonText="Action button"
           cancelButtonText="Cancel button"
-          mainButtonText="Click to see Dialog blocking scrolling"
+          mainButtonText="Dialog blocking scrolling"
           blockScroll={true}
         />
         <CodeSnippet code={`<Dialog blockScroll={true} />`} />
@@ -433,7 +433,7 @@ const [isDialogOpen, setIsDialogOpen] = useState(false);`}
           dialogBody="Dialog body"
           actionButtonText="Action button"
           cancelButtonText="Cancel button"
-          mainButtonText={`Click to see Dialog closing on "Esc" keypress`}
+          mainButtonText={`Dialog closing on "Esc" keypress`}
           closeOnEsc={true}
         />
         <CodeSnippet code={`<Dialog closeOnEsc={true} />`} />
@@ -455,7 +455,7 @@ const [isDialogOpen, setIsDialogOpen] = useState(false);`}
           dialogBody="Dialog body"
           actionButtonText="Action button"
           cancelButtonText="Cancel button"
-          mainButtonText={`Click to see Dialog closing on clicking overlay`}
+          mainButtonText={`Dialog closing on clicking overlay`}
           closeOnOverlayClick={true}
         />
         <CodeSnippet code={`<Dialog closeOnOverlayClick={true} />`} />

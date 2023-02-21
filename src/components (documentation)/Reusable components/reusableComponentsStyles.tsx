@@ -19,6 +19,10 @@ export const CodeSnippetContainer = styled.div`
   font-size: 13px;
   display: flex;
   flex-direction: column;
+  @media (min-width: 768px) {
+    width: 70%;
+    align-self: center;
+  }
 `;
 
 export const InnerNavigationContainer = styled.div`

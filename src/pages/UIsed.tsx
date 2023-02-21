@@ -19,6 +19,8 @@ const UIsed = () => {
 
   return (
     <>
+      {/* TODO navigate z Dialogu zrobić w innych komponentach */}
+
       <Navigation //TODO animacja na otwarcie i zamknięcie mobilnego menu
         isMobileMenuOpen={isMobileMenuOpen}
         onMobileMenuToggle={handleMobileMenuToggle}
