@@ -90,8 +90,9 @@ const DialogProps = () => {
       <SingleProp
         propName="overlayColor"
         description="todo"
-        type=""
+        type="string"
         isRequired={false}
+        defaultValue="rgba(0, 0, 0, 0.3)"
       />
 
       <SingleProp
@@ -99,27 +100,31 @@ const DialogProps = () => {
         description="todo"
         type=""
         isRequired={false}
+        defaultValue="center"
       />
 
       <SingleProp
         propName="blockScroll"
         description="todo"
-        type=""
+        type="boolean"
         isRequired={false}
+        defaultValue="false"
       />
 
       <SingleProp
         propName="closeOnEsc"
         description="todo"
-        type=""
+        type="boolean"
         isRequired={false}
+        defaultValue="false"
       />
 
       <SingleProp
         propName="closeOnOverlayClick"
         description="todo"
-        type=""
+        type="boolean"
         isRequired={false}
+        defaultValue="false"
       />
 
       <BackToTopComponent />

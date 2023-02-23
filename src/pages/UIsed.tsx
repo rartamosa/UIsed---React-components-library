@@ -19,8 +19,6 @@ const UIsed = () => {
 
   return (
     <>
-      {/* TODO navigate z Dialogu zrobić w innych komponentach */}
-
       <Navigation //TODO animacja na otwarcie i zamknięcie mobilnego menu
         isMobileMenuOpen={isMobileMenuOpen}
         onMobileMenuToggle={handleMobileMenuToggle}
@@ -33,10 +31,8 @@ const UIsed = () => {
 
         <Route path="tags-input/*" element={<TagsInput />} />
 
-        {/* TODO dodać opis nowego propsa columnWidth */}
         <Route path="table/*" element={<Table />} />
 
-        {/* TODO stylowanie nakłada się na wszystkie dialogi, a nie tylko na pojedyncze przykłady */}
         <Route path="dialog/*" element={<Dialog />} />
 
         <Route path="toast/*" element={<Toast />} />

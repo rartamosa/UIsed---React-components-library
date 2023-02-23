@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
 
 import { MainContainer } from "../Overview/overviewStyles";
 import ComponentPage from "../Reusable components/ComponentPage";
@@ -13,10 +13,13 @@ import TagsInputProps from "./TagsInputProps";
 
 const TagsInput = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
-    navigate("/uised/tags-input/usage");
-  }, []);
+    if (location.pathname === "/uised/tags-input") {
+      navigate("/uised/tags-input/usage");
+    }
+  }, [location.pathname, navigate]);
 
   return (
     <MainContainer style={{ gap: "30px" }}>
