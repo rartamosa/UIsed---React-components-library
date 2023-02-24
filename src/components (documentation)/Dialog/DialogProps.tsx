@@ -89,7 +89,7 @@ const DialogProps = () => {
 
       <SingleProp
         propName="overlayColor"
-        description="todo"
+        description="Used to set the background color of the overlay component which is displayed behind the dialog component, and its type is a string that represents a color value."
         type="string"
         isRequired={false}
         defaultValue="rgba(0, 0, 0, 0.3)"
@@ -97,15 +97,15 @@ const DialogProps = () => {
 
       <SingleProp
         propName="dialogPosition"
-        description="todo"
-        type=""
+        description="Specifies the horizontal and vertical position of the dialog window relative to the overlay."
+        type={`"center-top" | "center-bottom" | "left-center" | "left-top" | "left-bottom" | "right-center" | "right-top" | "right-bottom"`}
         isRequired={false}
         defaultValue="center"
       />
 
       <SingleProp
         propName="blockScroll"
-        description="todo"
+        description={`A boolean flag that controls whether scrolling on the page should be blocked while the dialog is open, and its value is used to set the "overflow" property of the "body" element in the "useEffect" hook.`}
         type="boolean"
         isRequired={false}
         defaultValue="false"
@@ -113,7 +113,7 @@ const DialogProps = () => {
 
       <SingleProp
         propName="closeOnEsc"
-        description="todo"
+        description={`A boolean value that determines whether the dialog should be closed when the "Escape" key is pressed.`}
         type="boolean"
         isRequired={false}
         defaultValue="false"
@@ -121,7 +121,7 @@ const DialogProps = () => {
 
       <SingleProp
         propName="closeOnOverlayClick"
-        description="todo"
+        description="A boolean that determines whether the dialog should be closed when the overlay is clicked."
         type="boolean"
         isRequired={false}
         defaultValue="false"

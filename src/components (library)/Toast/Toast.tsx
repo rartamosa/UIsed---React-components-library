@@ -9,6 +9,7 @@ import {
 import { library } from "@fortawesome/fontawesome-svg-core";
 
 import { ToastProps, toastFontColorHex } from "./ToastProps";
+import useToast from "../../components (library)/Toast/useToast";
 
 import {
   SingleToast,
@@ -36,6 +37,8 @@ const Toast = ({
   onToastRemove,
   toastsPosition,
 }: ToastProps) => {
+  // const [toastList, onToastAdd, onToastRemove] = useToast(3000);
+
   return (
     <ToastContainerDiv toastsPosition={toastsPosition}>
       {toastList.map(
