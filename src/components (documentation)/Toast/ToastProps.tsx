@@ -21,7 +21,7 @@ const ToastProps = () => {
       {/* toastList */}
       <SingleProp
         propName="toastList"
-        description=""
+        description="An array of SingleToastProps objects representing the list of toast notifications."
         type="SingleToastProps[]"
         isRequired={true}
       />
@@ -51,7 +51,7 @@ const ToastProps = () => {
 
       <SingleProp
         propName="onToastRemove"
-        description=""
+        description={`A callback function that is called when a toast is dismissed. Developers can use it to perform additional actions when a toast is removed, such as updating state or sending an API request. To use this prop, pass a function that accepts the toast id as an argument to the "onToastRemove" prop.`}
         type="(id: string) => void"
         isRequired={true}
       />
@@ -73,14 +73,14 @@ const ToastProps = () => {
 
       <SingleProp
         propName="toastDescription"
-        description="TODO"
+        description="Used to add description to a single Toast."
         type="string"
         isRequired={false}
       />
 
       <SingleProp
         propName="size"
-        description="TODO"
+        description="Refers to the size of the Toast component."
         type={`"small" | "medium" | "large"`}
         isRequired={false}
         defaultValue={`"medium"`}
@@ -88,7 +88,7 @@ const ToastProps = () => {
 
       <SingleProp
         propName="boxShadow"
-        description="TODO"
+        description="Used to add a box shadow effect to the SingleToast component."
         type="boolean"
         isRequired={false}
         defaultValue="false"
@@ -96,7 +96,7 @@ const ToastProps = () => {
 
       <SingleProp
         propName="toastIcon"
-        description="TODO"
+        description={`Accepts icon names from the Font Awesome library. The icon name should be passed as a string value to the toastIcon prop, for example, "check" or "sun".`}
         type="IconName"
         isRequired={false}
         defaultValue={`"circle-check" for "success" / "circle-exclamation" for "erorr" / "triangle-exclamation" for "warning" / "circle-info" for "info"`}
@@ -104,7 +104,7 @@ const ToastProps = () => {
 
       <SingleProp
         propName="iconColor"
-        description="TODO"
+        description={`Allows developers to change the color of the font-awesome icon that appears in the toast. Developers can pass a valid CSS color value to the iconColor prop, which will override the default color of the icon.`}
         type="string"
         isRequired={false}
         defaultValue="#fff"
@@ -112,7 +112,7 @@ const ToastProps = () => {
 
       <SingleProp
         propName="toastBacgroundColor"
-        description="TODO"
+        description="Allows the developer to set the background color of the toast component. It accepts a string value representing the color in any valid CSS color format such as hex codes, RGB or RGBA values, or color names."
         type="string"
         isRequired={false}
         defaultValue={`"#6cbb5a" for "success / "#f62e36" for "error" / "#ff9500" for "warning" / "#00a7db" for "info"`}
@@ -120,7 +120,7 @@ const ToastProps = () => {
 
       <SingleProp
         propName="toastFontColor"
-        description="TODO"
+        description="Used to set the font color of the toast message."
         type="string"
         isRequired={false}
         defaultValue="#fff"
@@ -128,7 +128,7 @@ const ToastProps = () => {
 
       <SingleProp
         propName="animationType"
-        description="TODO"
+        description="Allows to specify the type of animation used to display the toast message."
         type={`"fade" | "grow" | "slide"`}
         isRequired={false}
         defaultValue={`"fade"`}
@@ -136,7 +136,7 @@ const ToastProps = () => {
 
       <SingleProp
         propName="toastsPosition"
-        description="TODO"
+        description="Allows to specify the position where the toasts should appear on the screen."
         type={`"bottom-center" | "bottom-left" | "bottom-right" | "top-center" | "top-left" | "top-right"`}
         isRequired={false}
         defaultValue={`"bottom-center"`}

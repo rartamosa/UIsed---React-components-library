@@ -15,12 +15,12 @@ import useToast from "../../components (library)/Toast/useToast";
 import SingleToastExample from "./SingleToastExample";
 
 const ToastUsage = () => {
-  const [toastList, onToastAdd, onToastRemove] = useToast(30000);
-  const [toastList2, onToastAdd2, onToastRemove2] = useToast(30000);
-  const [toastList3, onToastAdd3, onToastRemove3] = useToast(30000);
-  const [toastList4, onToastAdd4, onToastRemove4] = useToast(30000);
-  const [toastList5, onToastAdd5, onToastRemove5] = useToast(30000);
-  const [toastList6, onToastAdd6, onToastRemove6] = useToast(30000);
+  const [toastList, onToastAdd, onToastRemove] = useToast(3000);
+  const [toastList2, onToastAdd2, onToastRemove2] = useToast(3000);
+  const [toastList3, onToastAdd3, onToastRemove3] = useToast(3000);
+  const [toastList4, onToastAdd4, onToastRemove4] = useToast(3000);
+  const [toastList5, onToastAdd5, onToastRemove5] = useToast(3000);
+  const [toastList6, onToastAdd6, onToastRemove6] = useToast(3000);
 
   return (
     <>
@@ -244,7 +244,13 @@ Generate toast
         <SectionSubheader>
           button or any other trigger props - toastDescription
         </SectionSubheader>
-        <TextSpan>TODO</TextSpan>
+        <TextSpan>
+          Used to provide a description or additional information about the{" "}
+          <Code>toast</Code> message being added. Developers can pass a string
+          value to this prop when creating a new <Code>toast</Code> message to
+          be displayed. If this prop is not provided, the <Code>toast</Code>{" "}
+          message will be displayed without a description.
+        </TextSpan>
         <SingleToastExample
           toastList={toastList}
           onToastRemove={onToastRemove}
@@ -276,7 +282,13 @@ Generate toast
         <SectionSubheader>
           button or any other trigger props - size
         </SectionSubheader>
-        <TextSpan>TODO</TextSpan>{" "}
+        <TextSpan>
+          The "size" prop in the code refers to the size of the{" "}
+          <Code>toast</Code> component. It is an optional prop of type "string"
+          with a default value of "medium". Developers can pass in a string
+          value of "small", "medium" or "large" to change the size of the{" "}
+          <Code>toast</Code> component accordingly.
+        </TextSpan>
         <SingleToastExample
           toastList={toastList}
           onToastRemove={onToastRemove}
@@ -326,7 +338,14 @@ Generate toast
         <SectionSubheader>
           button or any other trigger props - boxShadow
         </SectionSubheader>
-        <TextSpan>TODO</TextSpan>
+        <TextSpan>
+          If a developer wants to add a box shadow effect to the{" "}
+          <SecondaryCode>SingleToast</SecondaryCode> component, they can pass
+          the boolean prop <SecondaryCode>boxShadow</SecondaryCode> as true. On
+          the other hand, if they don't want to include a box shadow, they can
+          pass the prop as false or leave it out altogether, as the default
+          value is false.
+        </TextSpan>
         <SingleToastExample
           toastList={toastList}
           onToastRemove={onToastRemove}
@@ -358,7 +377,13 @@ Generate toast
         <SectionSubheader>
           button or any other trigger props - toastIcon
         </SectionSubheader>
-        <TextSpan>TODO</TextSpan>
+        <TextSpan>
+          The <SecondaryCode>toastIcon</SecondaryCode> prop in the code only
+          accepts icon names from the Font Awesome library. The icon name should
+          be passed as a string value to the{" "}
+          <SecondaryCode>toastIcon</SecondaryCode> prop, for example, "check" or
+          "sun".
+        </TextSpan>
         <SingleToastExample
           toastList={toastList}
           onToastRemove={onToastRemove}
@@ -390,7 +415,12 @@ Generate toast
         <SectionSubheader>
           button or any other trigger props - iconColor
         </SectionSubheader>
-        <TextSpan>TODO</TextSpan>
+        <TextSpan>
+          Allows developers to change the color of the font-awesome icon that
+          appears in the <Code>toast</Code>. Developers can pass a valid CSS
+          color value to the <SecondaryCode>iconColor</SecondaryCode> prop,
+          which will override the default color of the icon.
+        </TextSpan>
         <SingleToastExample
           toastList={toastList}
           onToastRemove={onToastRemove}
@@ -422,7 +452,12 @@ Generate toast
         <SectionSubheader>
           button or any other trigger props - toastBacgroundColor
         </SectionSubheader>
-        <TextSpan></TextSpan>
+        <TextSpan>
+          Allows the developer to set the background color of the{" "}
+          <Code>toast</Code> component. It accepts a string value representing
+          the color in any valid CSS color format such as hex codes, RGB or RGBA
+          values, or color names.
+        </TextSpan>
         <SingleToastExample
           toastList={toastList}
           onToastRemove={onToastRemove}
@@ -454,7 +489,16 @@ Generate toast
         <SectionSubheader>
           button or any other trigger props - toastFontColor
         </SectionSubheader>
-        <TextSpan>TODO</TextSpan>
+        <TextSpan>
+          The <SecondaryCode>toastFontColor</SecondaryCode> prop can be used to
+          set the font color of the <Code>toast</Code> message. By default, the
+          font color is set to white. To customize the font color, a developer
+          can pass a string value to the{" "}
+          <SecondaryCode>toastFontColor</SecondaryCode> prop. For example, if a
+          developer wants to set the font color to black, they can pass the
+          string value "black" to the{" "}
+          <SecondaryCode>toastFontColor</SecondaryCode> prop.
+        </TextSpan>
         <SingleToastExample
           toastList={toastList}
           onToastRemove={onToastRemove}
@@ -484,7 +528,15 @@ Generate toast
       {/* animationType */}
       <SingleSection>
         <SectionSubheader>animation type</SectionSubheader>
-        <TextSpan>TODO</TextSpan>
+        <TextSpan>
+          Allows the developer to specify the type of animation used to display
+          the <Code>toast</Code> message. The prop accepts one of three values:
+          "fade", "grow", or "slide". The "fade" value will cause the{" "}
+          <Code>toast</Code> to appear and disappear with a fade-in/fade-out
+          effect, "grow" will cause the <Code>toast</Code> to expand and then
+          contract, while "slide" will cause the <Code>toast</Code> to slide in
+          and out of view.
+        </TextSpan>
         <SingleToastExample
           toastList={toastList}
           onToastRemove={onToastRemove}
@@ -492,7 +544,7 @@ Generate toast
           mainButtonText="Toast with grow animation type"
           toastHeader="Toast header"
           id={uniqid()}
-          animationType="grow"
+          animationType="slide"
         />
         <CodeSnippet
           language="jsx"
@@ -514,7 +566,15 @@ Generate toast
       {/* toastsPosition */}
       <SingleSection>
         <SectionSubheader>toasts position</SectionSubheader>
-        <TextSpan>TODO</TextSpan>
+        <TextSpan>
+          The <SecondaryCode>toastsPosition</SecondaryCode> prop allows the
+          developer to specify the position where the <Code>toasts</Code> should
+          appear on the screen. This prop accepts one of the following values:
+          "bottom-center", "bottom-left", "bottom-right", "top-center",
+          "top-left", or "top-right". The default value is "bottom-center". The
+          developer can choose the appropriate position depending on the layout
+          of their application.
+        </TextSpan>
       </SingleSection>
       <SingleToastExample
         toastList={toastList2}
