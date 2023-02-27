@@ -9,7 +9,6 @@ import {
 import { library } from "@fortawesome/fontawesome-svg-core";
 
 import { ToastProps, toastFontColorHex } from "./ToastProps";
-import useToast from "../../components (library)/Toast/useToast";
 
 import {
   SingleToast,
@@ -41,7 +40,7 @@ const Toast = ({
 
   return (
     <ToastContainerDiv toastsPosition={toastsPosition}>
-      {toastList.map(
+      {toastList?.map(
         ({
           id,
           toastHeader,
@@ -111,7 +110,7 @@ const Toast = ({
 
                 <ToastCloseButton
                   icon={["fas", "circle-xmark"]}
-                  onClick={() => onToastRemove(id)}
+                  onClick={onToastRemove ? () => onToastRemove(id) : undefined}
                   style={{ cursor: "pointer", alignSelf: "baseline" }}
                   iconSize={size}
                 />

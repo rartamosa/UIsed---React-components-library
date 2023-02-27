@@ -1,21 +1,19 @@
 import { IconName } from "@fortawesome/fontawesome-svg-core";
 
-export type ToastProps = SingleToastExample &
-  ToastToAdd &
-  SingleToastProps & {
-    toastList: SingleToastProps[];
-    animationType?: "fade" | "grow" | "slide";
-    onToastRemove: (id: string) => void;
-    onToastAdd: (toastToAdd: ToastToAdd) => void;
-    toastsPosition?:
-      | "bottom-center"
-      | "bottom-left"
-      | "bottom-right"
-      | "top-center"
-      | "top-left"
-      | "top-right";
-    buttonProps?: React.CSSProperties;
-  };
+export type ToastProps = SingleToastExample & {
+  toastList: SingleToastProps[];
+  animationType?: "fade" | "grow" | "slide";
+  onToastRemove: (id: string) => void;
+  onToastAdd: (toastToAdd: ToastToAdd) => void;
+  toastsPosition?:
+    | "bottom-center"
+    | "bottom-left"
+    | "bottom-right"
+    | "top-center"
+    | "top-left"
+    | "top-right";
+  buttonProps?: React.CSSProperties;
+};
 
 export type ToastToAdd = {
   toastHeader: string;
@@ -41,26 +39,8 @@ export type SingleToastProps = ToastToAdd & {
     | "top-right";
 };
 
-export type SingleToastExample = {
-  buttonText: string;
-  animationType?: "fade" | "grow" | "slide";
-  toastsPosition?:
-    | "bottom-center"
-    | "bottom-left"
-    | "bottom-right"
-    | "top-center"
-    | "top-left"
-    | "top-right";
-  buttonProps?: React.CSSProperties;
-  toastDescription?: string;
-  toastBacgroundColor?: string;
-  toastFontColor?: string;
-  toastIcon?: IconName;
-  iconColor?: string;
-  typeOfToast?: "success" | "error" | "warning" | "info";
-  size?: "small" | "medium" | "large";
-  boxShadow?: boolean;
-  isUnmounting?: boolean;
+export type SingleToastExample = SingleToastProps & {
+  mainButtonText: string;
 };
 
 export const toastFontColorHex = "#fff";

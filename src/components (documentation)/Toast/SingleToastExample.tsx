@@ -1,28 +1,37 @@
 import { Button } from "../../components (library)/Basic Components/Buttons";
 import Toast from "../../components (library)/Toast/Toast";
 import { ToastProps } from "../../components (library)/Toast/ToastProps";
-import useToast from "../../components (library)/Toast/useToast";
 
 const SingleToastExample = (toastProps: ToastProps) => {
-  const [toastList, onToastAdd, onToastRemove] = useToast(30000);
-
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
       <Button
         buttonProps={{ fontFamily: "Red Hat Display" }}
-        onClick={() => toastProps.onToastAdd}
+        onClick={() =>
+          toastProps.onToastAdd({
+            toastHeader: toastProps.toastHeader,
+            typeOfToast: toastProps.typeOfToast,
+            toastDescription: toastProps.toastDescription,
+            size: toastProps.size,
+            boxShadow: toastProps.boxShadow,
+            toastIcon: toastProps.toastIcon,
+            iconColor: toastProps.iconColor,
+            toastBacgroundColor: toastProps.toastBacgroundColor,
+            toastFontColor: toastProps.toastFontColor,
+          })
+        }
       >
-        {toastProps.buttonText}
+        {toastProps.mainButtonText}
       </Button>
       <Toast
-        toastList={toastList}
-        onToastRemove={onToastRemove}
-        animationType={toastProps.animationType}
-        toastsPosition={toastProps.toastsPosition}
-        buttonText={toastProps.buttonText}
+        toastList={toastProps.toastList}
+        onToastRemove={toastProps.onToastRemove}
+        mainButtonText={toastProps.mainButtonText}
         toastHeader={toastProps.toastHeader}
         id={toastProps.id}
-        onToastAdd={onToastAdd}
+        animationType={toastProps.animationType}
+        toastsPosition={toastProps.toastsPosition}
+        onToastAdd={toastProps.onToastAdd}
       />
     </div>
   );

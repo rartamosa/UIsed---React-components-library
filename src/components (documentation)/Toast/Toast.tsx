@@ -9,7 +9,7 @@ import {
   InnerNavigationOption,
 } from "../Reusable components/reusableComponentsStyles";
 import ToastUsage from "./ToastUsage";
-
+import ToastProps from "./ToastProps";
 const Toast = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -37,7 +37,7 @@ const Toast = () => {
       </InnerNavigationContainer>
       <Routes>
         <Route path="usage" element={<ToastUsage />} />
-        <Route path="props" element={<div>props</div>} />
+        <Route path="props" element={<ToastProps />} />
       </Routes>
       <Background />
     </MainContainer>
