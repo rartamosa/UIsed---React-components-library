@@ -8,7 +8,7 @@ import TagsInput from "../components (documentation)/TagsInput/TagsInput";
 import Table from "../components (documentation)/Table/Table";
 import Dialog from "../components (documentation)/Dialog/Dialog";
 import Toast from "../components (documentation)/Toast/Toast";
-import Accordion from "../components (documentation)/Accordion";
+import Accordion from "../components (documentation)/Accordion/Accordion";
 
 const UIsed = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

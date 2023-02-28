@@ -22,6 +22,19 @@ export type AccordionData = {
   disabled?: boolean;
 };
 
+// export type AccordionSingleExampleProps = {
+//   show?: "single" | "many";
+//   customIconClosed?: IconName;
+//   customIconExpanded?: IconName;
+//   iconColor?: string;
+//   accordionBodyHeight?: string;
+//   scroll?: boolean;
+//   containerBackgroundColor?: string;
+//   accordionBackgroundColor?: string;
+//   defaultIndex?: 0 | number;
+//   defaultIndexes?: number[];
+// };
+
 export const MAIN_LIGHT_COLOR = "#e2e2e2";
 export const SECONDARY_LIGHT_COLOR = "#bbb";
 export const MAIN_DARK_FONT_COLOR = "#0A1929";
