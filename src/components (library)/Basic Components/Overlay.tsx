@@ -31,7 +31,7 @@ export const Overlay = styled.div<{
     props.dialogPosition === "right-center" &&
     css`
       justify-content: flex-end;
-    `}
+    `} 
       ${(props) =>
     props.dialogPosition === "center-top" &&
     css`

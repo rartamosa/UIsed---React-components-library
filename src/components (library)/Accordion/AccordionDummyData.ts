@@ -16,7 +16,6 @@ const accordionDummyData: AccordionData[] = [
     id: uniqid(),
     children: DummyComponent,
     title: "Example title2",
-    // disabled: false,
   },
   {
     id: uniqid(),

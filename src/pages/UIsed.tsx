@@ -19,14 +19,13 @@ const UIsed = () => {
 
   return (
     <>
-      <Navigation //TODO animacja na otwarcie i zamknięcie mobilnego menu
+      <Navigation
         isMobileMenuOpen={isMobileMenuOpen}
         onMobileMenuToggle={handleMobileMenuToggle}
       />
       <Routes>
         <Route index element={<Overview />} />
 
-        {/* TODO background */}
         <Route path="select/*" element={<Select />} />
 
         <Route path="tags-input/*" element={<TagsInput />} />
@@ -39,8 +38,6 @@ const UIsed = () => {
 
         <Route path="accordion/*" element={<Accordion />} />
       </Routes>
-
-      {/* <Background /> */}
     </>
   );
 };

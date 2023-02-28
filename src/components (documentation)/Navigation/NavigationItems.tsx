@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   fas,
   faCirclePlay,
@@ -18,9 +16,16 @@ import {
 import { fab, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { far } from "@fortawesome/free-regular-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
+import { NavigationOption } from "./NavigationStyles";
 
 import { NavigationItemsProps } from "./NavigationProps";
-import { ORANGE_COLOR, MAIN_DARK_FONT_COLOR } from "../../utils/commons";
+import {
+  MenuPrimaryIcon,
+  NavigationOptionDiv,
+  ComponentsOptions,
+  MenuSecondaryIcon,
+  NavigationGithubOption,
+} from "./NavigationStyles";
 
 library.add(
   fas,
@@ -134,56 +139,4 @@ export const NavigationContainer = styled.div`
   @media (min-width: 768px) {
     margin-top: 20px;
   }
-`;
-
-export const ComponentsOptions = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 11px;
-  padding-left: 41px;
-  margin-top: 10px;
-`;
-
-export const NavigationOption = styled(NavLink)<{
-  end?: boolean;
-}>`
-  display: flex;
-  gap: 9px;
-  color: ${MAIN_DARK_FONT_COLOR};
-  text-decoration: none;
-  padding: 3px 9px;
-  text-transform: capitalize;
-  &:hover,
-  &:focus,
-  &.active {
-    background-color: rgba(251, 133, 0, 0.3);
-    border-radius: 5px;
-    color: ${ORANGE_COLOR};
-  }
-`;
-
-export const NavigationOptionDiv = styled.div`
-  display: flex;
-  gap: 9px;
-  padding: 3px 9px;
-  text-transform: capitalize;
-  &:hover,
-  &:focus {
-    background-color: rgba(251, 133, 0, 0.3);
-    border-radius: 5px;
-    color: ${ORANGE_COLOR};
-  }
-`;
-
-export const NavigationGithubOption = styled.a`
-  color: ${MAIN_DARK_FONT_COLOR};
-  text-decoration: none;
-`;
-
-export const MenuPrimaryIcon = styled(FontAwesomeIcon)`
-  align-self: center;
-`;
-
-export const MenuSecondaryIcon = styled(FontAwesomeIcon)`
-  align-self: flex-end;
 `;

@@ -47,3 +47,57 @@ export const InnerNavigationOption = styled(NavLink)`
     color: ${ORANGE_COLOR};
   }
 `;
+
+export const BackToTopContainer = styled.div<{
+  onClick: () => void;
+}>`
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  align-self: center;
+  cursor: pointer;
+`;
+
+export const BackToTop = styled.span`
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 16px;
+`;
+
+export const Code = styled.span`
+  font-family: Courier Prime;
+  color: ${ORANGE_COLOR};
+  text-transform: capitalize;
+`;
+
+export const PropName = styled.span`
+  font-family: Courier Prime;
+  color: ${ORANGE_COLOR};
+  border-bottom: 1px solid;
+  padding-bottom: 5px;
+`;
+
+export const PropDescriptionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+export const PropDescriptionLine = styled.div`
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  @media (min-width: 768px) {
+    grid-template-columns: 220px 1fr;
+  }
+`;
+
+export const Key = styled.span`
+  &:first-letter {
+    text-transform: uppercase;
+  }
+`;
+
+export const CodeFont = styled.span`
+  font-family: Courier Prime;
+`;

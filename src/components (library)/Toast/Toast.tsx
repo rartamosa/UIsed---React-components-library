@@ -36,8 +36,6 @@ const Toast = ({
   onToastRemove,
   toastsPosition,
 }: ToastProps) => {
-  // const [toastList, onToastAdd, onToastRemove] = useToast(3000);
-
   return (
     <ToastContainerDiv toastsPosition={toastsPosition}>
       {toastList?.map(

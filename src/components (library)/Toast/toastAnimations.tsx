@@ -128,6 +128,6 @@ from {
   transform: translateY(0);
 }
 to {
-  transform: translateY(-100%);
+  transform: translateY(-100%); 
 }
 `;

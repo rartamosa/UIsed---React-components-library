@@ -36,7 +36,7 @@ export const Options = styled.ul<{
       padding: 15px;
       max-height: 157px;
       min-height: 157px;
-    `}
+    `} 
     overflow-x: auto;
   width: inherit;
   border: 1px solid #000;

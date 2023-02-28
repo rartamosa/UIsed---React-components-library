@@ -13,7 +13,7 @@ import BackToTopComponent from "../Reusable components/BackToTopComponent";
 const SelectUsage = () => {
   return (
     <>
-      {/* BASIC */}
+      {/* usage */}
       <SingleSection>
         <SectionSubheader>Usage</SectionSubheader>
         <TextSpan>
@@ -29,7 +29,7 @@ const SelectUsage = () => {
         />
       </SingleSection>
 
-      {/* PLACEHOLDER */}
+      {/* placeholder */}
       <SingleSection>
         <SectionSubheader>select placeholder</SectionSubheader>
         <TextSpan>
@@ -45,7 +45,7 @@ const SelectUsage = () => {
         />
       </SingleSection>
 
-      {/* BORDER */}
+      {/* containerBorderColor & containerBorderWidth */}
       <SingleSection>
         <SectionSubheader>container border</SectionSubheader>
         <TextSpan>
@@ -70,7 +70,7 @@ const SelectUsage = () => {
         />
       </SingleSection>
 
-      {/* SIZE */}
+      {/* componentSize */}
       <SingleSection>
         <SectionSubheader>size</SectionSubheader>
         <TextSpan>
@@ -108,7 +108,7 @@ const SelectUsage = () => {
         />
       </SingleSection>
 
-      {/* BACKGROUND COLOR */}
+      {/* backgroundColor */}
       <SingleSection>
         <SectionSubheader>background color</SectionSubheader>
         <TextSpan>
@@ -122,7 +122,7 @@ const SelectUsage = () => {
         <CodeSnippet code={`<Select backgroundColor="#FCC0CB" />`} />
       </SingleSection>
 
-      {/* SHOULD CLOSE ON CLEAR */}
+      {/* shouldCloseOnClear */}
       <SingleSection>
         <SectionSubheader>should close on clear</SectionSubheader>
         <TextSpan>
@@ -137,7 +137,7 @@ const SelectUsage = () => {
         <CodeSnippet code={`<Select shouldCloseOnClear={true} />`} />
       </SingleSection>
 
-      {/* IS DISABLED */}
+      {/* isDisabled */}
       <SingleSection>
         <SectionSubheader>disable Select</SectionSubheader>
         <TextSpan>
@@ -153,7 +153,7 @@ const SelectUsage = () => {
         <CodeSnippet code={`<Select isDisabled={true} />`} />
       </SingleSection>
 
-      {/* ERROR BORDER COLOR */}
+      {/* errorBorderColor */}
       <SingleSection>
         <SectionSubheader>border color on error</SectionSubheader>
         <TextSpan>
@@ -168,7 +168,7 @@ const SelectUsage = () => {
         <CodeSnippet code={`<Select errorBorderColor="violet" />`} />
       </SingleSection>
 
-      {/* ICON COLOR */}
+      {/* iconColor */}
       <SingleSection>
         <SectionSubheader>icon color</SectionSubheader>
         <TextSpan>
@@ -181,7 +181,7 @@ const SelectUsage = () => {
         <CodeSnippet code={`<Select iconColor="#2338E9" />`} />
       </SingleSection>
 
-      {/* CUSTOM ICON */}
+      {/* customIcon */}
       <SingleSection>
         <SectionSubheader>custom icon</SectionSubheader>
         <TextSpan>

@@ -1,12 +1,11 @@
 import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { fas, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { fab, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 
-import { LogoThumbnail } from "../components (documentation)/Navigation/MobileNavigationHeader";
+import { LogoThumbnail } from "../components (documentation)/Navigation/NavigationStyles";
 import Background from "../components (documentation)/Background/Background";
 import {
   WelcomeContainer,
