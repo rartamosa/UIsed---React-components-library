@@ -141,7 +141,6 @@ const ToastProps = () => {
         isRequired={false}
         defaultValue={`"bottom-center"`}
       />
-
       <BackToTopComponent />
     </>
   );

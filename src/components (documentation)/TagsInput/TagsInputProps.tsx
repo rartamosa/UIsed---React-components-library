@@ -141,7 +141,6 @@ const TagsInputProps = () => {
         isRequired={false}
         defaultValue="bottom"
       />
-
       <BackToTopComponent />
     </>
   );

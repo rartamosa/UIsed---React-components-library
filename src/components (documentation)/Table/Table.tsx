@@ -3,7 +3,6 @@ import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
 
 import { MainContainer } from "../Overview/overviewStyles";
 import ComponentPage from "../Reusable components/ComponentPage";
-import Background from "../Background/Background";
 import {
   InnerNavigationContainer,
   InnerNavigationOption,
@@ -40,7 +39,6 @@ const Table = () => {
         <Route path="usage" element={<TableUsage />} />
         <Route path="props" element={<TableProps />} />
       </Routes>
-      <Background />
     </MainContainer>
   );
 };

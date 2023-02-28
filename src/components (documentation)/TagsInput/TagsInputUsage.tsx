@@ -245,7 +245,6 @@ const TagsInputUsage = () => {
 //"left" and "right" are designed for desktop versions only`}
         />
       </SingleSection>
-
       <BackToTopComponent />
     </>
   );

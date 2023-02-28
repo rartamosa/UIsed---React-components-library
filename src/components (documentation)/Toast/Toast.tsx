@@ -3,13 +3,13 @@ import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
 
 import { MainContainer } from "../Overview/overviewStyles";
 import ComponentPage from "../Reusable components/ComponentPage";
-import Background from "../Background/Background";
 import {
   InnerNavigationContainer,
   InnerNavigationOption,
 } from "../Reusable components/reusableComponentsStyles";
 import ToastUsage from "./ToastUsage";
 import ToastProps from "./ToastProps";
+
 const Toast = () => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -39,7 +39,6 @@ const Toast = () => {
         <Route path="usage" element={<ToastUsage />} />
         <Route path="props" element={<ToastProps />} />
       </Routes>
-      <Background />
     </MainContainer>
   );
 };

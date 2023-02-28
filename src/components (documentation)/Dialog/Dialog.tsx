@@ -3,7 +3,6 @@ import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
 
 import { MainContainer } from "../Overview/overviewStyles";
 import ComponentPage from "../Reusable components/ComponentPage";
-import Background from "../Background/Background";
 import {
   InnerNavigationContainer,
   InnerNavigationOption,
@@ -40,7 +39,6 @@ const Dialog = () => {
         <Route path="usage" element={<DialogUsage />} />
         <Route path="props" element={<DialogProps />} />
       </Routes>
-      <Background />
     </MainContainer>
   );
 };

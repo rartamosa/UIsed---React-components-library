@@ -226,7 +226,6 @@ const TableUsage = () => {
         </div>
         <CodeSnippet code={`<Table stickyHeader={false} />`} />
       </SingleSection>
-
       <BackToTopComponent />
     </>
   );
