@@ -1,4 +1,4 @@
-![Logo](https://i.ibb.co/D5fpC5t/UIsed-logo.png)
+![Logo align="center"](https://i.ibb.co/D5fpC5t/UIsed-logo.png)
 
 #### Streamline your development process with UIsed.
 
