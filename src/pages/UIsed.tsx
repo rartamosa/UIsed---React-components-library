@@ -39,6 +39,8 @@ const UIsed = () => {
 
         <Route path="accordion/*" element={<Accordion />} />
       </Routes>
+
+      {/* <Background /> */}
     </>
   );
 };

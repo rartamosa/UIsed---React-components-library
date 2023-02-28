@@ -20,7 +20,8 @@ const MobileNavigationHeader = ({
   };
 
   return (
-    <>
+    // <div style={{ position: "sticky", height: "90px", top: "0" }}>
+    <div>
       <MobileNavigationHeaderContainer>
         <LogoThumbnail
           src={process.env.PUBLIC_URL + "/assets/UIsed _logo_thumbnail.png"}
@@ -33,7 +34,8 @@ const MobileNavigationHeader = ({
           onClick={onMobileMenuToggle}
         />
       </MobileNavigationHeaderContainer>
-    </>
+    </div>
+    // </div>
   );
 };
 export default MobileNavigationHeader;

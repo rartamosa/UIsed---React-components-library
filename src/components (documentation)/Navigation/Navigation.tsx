@@ -11,7 +11,14 @@ const Navigation = ({
   onMobileMenuToggle,
 }: NavigationProps) => {
   return (
-    <div>
+    <div
+      style={{
+        position: "sticky",
+        top: "0",
+        zIndex: "1",
+        backgroundColor: "#fff",
+      }}
+    >
       <MobileNavigationHeader onMobileMenuToggle={onMobileMenuToggle} />
 
       <NavigationContainer isMobileMenuOpen={isMobileMenuOpen}>

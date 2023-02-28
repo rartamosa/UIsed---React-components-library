@@ -5,7 +5,6 @@ import { MainContainer } from "../Overview/overviewStyles";
 import ComponentPage from "../Reusable components/ComponentPage";
 import SelectUsage from "./SelectUsage";
 import SelectProps from "./SelectProps";
-import Background from "../Background/Background";
 import {
   InnerNavigationContainer,
   InnerNavigationOption,
@@ -41,7 +40,6 @@ const Select = () => {
         <Route path="usage" element={<SelectUsage />} />
         <Route path="props" element={<SelectProps />} />
       </Routes>
-      <Background />
     </MainContainer>
   );
 };
