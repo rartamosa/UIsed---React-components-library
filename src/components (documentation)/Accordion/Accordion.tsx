@@ -3,7 +3,6 @@ import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
 
 import { MainContainer } from "../Overview/overviewStyles";
 import ComponentPage from "../Reusable components/ComponentPage";
-import Background from "../Background/Background";
 import {
   InnerNavigationContainer,
   InnerNavigationOption,
@@ -40,7 +39,6 @@ const Accordion = () => {
         <Route path="usage" element={<AccordionUsage />} />
         <Route path="props" element={<AccordionProps />} />
       </Routes>
-      <Background />
     </MainContainer>
   );
 };

@@ -144,6 +144,7 @@ export const NavigationOptionDiv = styled.div`
   gap: 9px;
   padding: 3px 9px;
   text-transform: capitalize;
+  cursor: pointer;
   &:hover,
   &:focus {
     background-color: rgba(251, 133, 0, 0.3);

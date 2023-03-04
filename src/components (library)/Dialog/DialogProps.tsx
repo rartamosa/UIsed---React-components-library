@@ -9,6 +9,7 @@ export type DialogProps = DialogExampleProps & {
   dialogBody: string;
   actionButtonText: string;
   cancelButtonText: string;
+  isMobileMenuOpen?: boolean;
 };
 
 export type DialogExampleProps = {
