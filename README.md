@@ -6,7 +6,7 @@ UIsed is a comprehensive library of reusable React components that makes buildin
 
 ## Documentation
 
-Full [documentation is available here](https://uised-library.netlify.app/).
+Full [documentation is available here](https://uised.netlify.app/).
 
 ## Select
 
