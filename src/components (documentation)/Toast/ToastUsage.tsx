@@ -1,5 +1,4 @@
 import styled from "styled-components";
-// @ts-ignore
 import uniqid from "uniqid";
 
 import {
