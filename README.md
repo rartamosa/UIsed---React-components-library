@@ -10,9 +10,9 @@ Full [documentation is available here](https://uised.netlify.app/).
 
 ## Select
 
-#### ⚙️ [usage](https://uised-library.netlify.app/uised/select/usage)
+#### ⚙️ [usage](https://uised.netlify.app/uised/select/usage)
 
-#### ☞ [props](https://uised-library.netlify.app/uised/select/props)
+#### ☞ [props](https://uised.netlify.app/uised/select/props)
 
 #### ▶️ [GitHub repository](https://github.com/rartamosa/React-UI-components/tree/master/src/components/Select)
 
